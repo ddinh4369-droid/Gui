@@ -1,0 +1,5 @@
+C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/AutonomousGUI.dir
+C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/edit_cache.dir
+C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/rebuild_cache.dir
+C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/AutonomousGUI_autogen_timestamp_deps.dir
+C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/AutonomousGUI_autogen.dir

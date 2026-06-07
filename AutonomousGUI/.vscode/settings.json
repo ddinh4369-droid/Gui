@@ -1,0 +1,12 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "cmake.debugConfig": {
+        "cwd": "${workspaceFolder}/build",
+        "environment": [
+            {
+                "name": "PATH",
+                "value": "C:\\msys64\\mingw64\\bin;${env:PATH}"
+            }
+        ]
+    }
+}

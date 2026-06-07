@@ -1,0 +1,12 @@
+# ninja log v7
+53	885	8013731757513646	AutonomousGUI_autogen/timestamp	af2a983e51f72fd
+53	885	8013731757513646	AutonomousGUI_autogen/mocs_compilation.cpp	af2a983e51f72fd
+53	885	8013731757513646	C:/Users/duc/projects/BTLT/AutonomousGUI/build/AutonomousGUI_autogen/timestamp	af2a983e51f72fd
+53	885	8013731757513646	C:/Users/duc/projects/BTLT/AutonomousGUI/build/AutonomousGUI_autogen/mocs_compilation.cpp	af2a983e51f72fd
+885	998	8013731759237425	AutonomousGUI_autogen/EWIEGA46WW/qrc_resources.cpp	a43b9c7c997ae9ce
+885	998	8013731759237425	C:/Users/duc/projects/BTLT/AutonomousGUI/build/AutonomousGUI_autogen/EWIEGA46WW/qrc_resources.cpp	a43b9c7c997ae9ce
+1011	1176	8013731759513617	CMakeFiles/AutonomousGUI.dir/AutonomousGUI_autogen/EWIEGA46WW/qrc_resources.cpp.obj	7bb9cc37492bb2c1
+1002	3159	8013731759416482	CMakeFiles/AutonomousGUI.dir/main.cpp.obj	e35974df14583ba
+998	3338	8013731759376494	CMakeFiles/AutonomousGUI.dir/AutonomousGUI_autogen/mocs_compilation.cpp.obj	2002940fba8ba1c3
+1006	4817	8013731759466471	CMakeFiles/AutonomousGUI.dir/MainWindow.cpp.obj	5bffc6102205ca14
+4817	5174	8013731797568508	AutonomousGUI.exe	8573be5c5a6e9c74
