@@ -40,9 +40,9 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "MainWindow",
-        "onMasterSpeedChanged",
+        "onMasterSliderChanged",
         "",
-        "value",
+        "onMotorSliderChanged",
         "onMoveUpClicked",
         "onMoveDownClicked",
         "onMoveLeftClicked",
@@ -59,10 +59,10 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'onMasterSpeedChanged'
-        QtMocHelpers::SlotData<void(int)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 3 },
-        }}),
+        // Slot 'onMasterSliderChanged'
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onMotorSliderChanged'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onMoveUpClicked'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onMoveDownClicked'
@@ -110,17 +110,18 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<MainWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->onMasterSpeedChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 1: _t->onMoveUpClicked(); break;
-        case 2: _t->onMoveDownClicked(); break;
-        case 3: _t->onMoveLeftClicked(); break;
-        case 4: _t->onMoveRightClicked(); break;
-        case 5: _t->onStopCarClicked(); break;
-        case 6: _t->onResetPressed(); break;
-        case 7: _t->updateCameraFrame((*reinterpret_cast<std::add_pointer_t<QImage>>(_a[1]))); break;
-        case 8: _t->handleGesture((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 9: _t->readPythonOutput(); break;
-        case 10: _t->readSerialData(); break;
+        case 0: _t->onMasterSliderChanged(); break;
+        case 1: _t->onMotorSliderChanged(); break;
+        case 2: _t->onMoveUpClicked(); break;
+        case 3: _t->onMoveDownClicked(); break;
+        case 4: _t->onMoveLeftClicked(); break;
+        case 5: _t->onMoveRightClicked(); break;
+        case 6: _t->onStopCarClicked(); break;
+        case 7: _t->onResetPressed(); break;
+        case 8: _t->updateCameraFrame((*reinterpret_cast<std::add_pointer_t<QImage>>(_a[1]))); break;
+        case 9: _t->handleGesture((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 10: _t->readPythonOutput(); break;
+        case 11: _t->readSerialData(); break;
         default: ;
         }
     }
@@ -145,14 +146,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

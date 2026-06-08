@@ -435,23 +435,6 @@ CMakeFiles/AutonomousGUI.dir/MainWindow.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtGui/QImage \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QTimer \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qtimer.h \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/QVBoxLayout \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/qboxlayout.h \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/qlayout.h \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/qlayoutitem.h \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgridlayout.h \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/QHBoxLayout \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/QFormLayout \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/qformlayout.h \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/QLayout \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/QGroupBox \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgroupbox.h \
- C:/Qt/6.11.1/mingw_64/include/QtGui/QPainter \
- C:/Qt/6.11.1/mingw_64/include/QtGui/qpainter.h \
- C:/Qt/6.11.1/mingw_64/include/QtGui/qtextoption.h \
- C:/Qt/6.11.1/mingw_64/include/QtGui/qpen.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QDebug \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QCoreApplication \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/windows.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sdkddkver.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/excpt.h \
@@ -691,4 +674,21 @@ CMakeFiles/AutonomousGUI.dir/MainWindow.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sec_api/stralign_s.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/winsvc.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/mcx.h \
- C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/imm.h
+ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/imm.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QVBoxLayout \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qboxlayout.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qlayout.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgridlayout.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QHBoxLayout \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QFormLayout \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qformlayout.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QLayout \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QGroupBox \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgroupbox.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/QPainter \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qpainter.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qtextoption.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qpen.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QDebug \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QCoreApplication

@@ -8,10 +8,6 @@
 #include <QKeyEvent>
 #include <QCoreApplication>
 #include <QTimer>
-#include <windows.h> 
-
-// Biến Handle quản lý cổng kết nối Serial của Windows
-HANDLE hSerial = INVALID_HANDLE_VALUE;
 
 // ============================================================================
 // KHỐI 1: KHỞI TẠO & GIẢI PHÓNG HỆ THỐNG (VÒNG ĐỜI ỨNG DỤNG)
@@ -19,6 +15,7 @@ HANDLE hSerial = INVALID_HANDLE_VALUE;
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     currentMode = 0;
+    hSerial = INVALID_HANDLE_VALUE; 
 
     setWindowTitle("HUST Autonomous Control Station Pro");
     resize(1200, 650);
@@ -90,7 +87,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     teleLayout->addRow("TRẠNG THÁI HỆ THỐNG:", currentModeLabel);
     leftLayout->addWidget(telemetryGroup);
 
-    // Group 2: BẢNG ĐIỀU KHIỂN NÚT BẤM
+    // Group 2: BẢNG ĐIỀU KHIỂN NÚT BẤM + GA TỔNG
     QGroupBox *controlGroup = new QGroupBox("BẢNG ĐIỀU KHIỂN HỆ THỐNG", this);
     QVBoxLayout *controlGroupLayout = new QVBoxLayout(controlGroup);
     controlGroupLayout->setContentsMargins(15, 15, 15, 15);
@@ -101,7 +98,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     masterTitle->setStyleSheet("font-weight: bold; color: #cbd5e1;");
     
     masterSlider = new QSlider(Qt::Horizontal);
-    masterSlider->setRange(-255, 255);
+    masterSlider->setRange(0, 255);
     masterSlider->setValue(0);
     masterSlider->setStyleSheet("QSlider::groove:horizontal { background: #334155; height: 6px; border-radius: 3px; } "
                                 "QSlider::handle:horizontal { background: #f59e0b; width: 16px; height: 16px; margin: -5px 0; border-radius: 8px; }");
@@ -129,9 +126,51 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     dPadLayout->addWidget(btnStop,  1, 1); 
     dPadLayout->addWidget(btnRight, 1, 2);
     dPadLayout->addWidget(btnDown,  2, 1);
-    
     controlGroupLayout->addLayout(dPadLayout);
     leftLayout->addWidget(controlGroup);
+
+    // --- GROUP 3: ĐIỀU CHỈNH TỐC ĐỘ ĐỘNG CƠ ĐỘC LẬP QSLIDER ---
+    QGroupBox *motorGroupBox = new QGroupBox("ĐIỀU CHỈNH TỐC ĐỘ ĐỘNG CƠ ĐỘC LẬP", this);
+    QGridLayout *motorGrid = new QGridLayout(motorGroupBox);
+    motorGrid->setSpacing(12);
+
+    struct MotorConfig {
+        QString name;
+        QSlider** slider;
+        QLabel** label;
+    } motors[] = {
+        {"M1 (Trước Trái):", &m1Slider, &m1ValueLabel},
+        {"M2 (Trước Phải):", &m2Slider, &m2ValueLabel},
+        {"M3 (Sau Trái):",  &m3Slider, &m3ValueLabel},
+        {"M4 (Sau Phải):",  &m4Slider, &m4ValueLabel}
+    };
+
+    QString sliderStyle = "QSlider::groove:horizontal { height: 6px; background: #334155; border-radius: 3px; }"
+                          "QSlider::handle:horizontal { background: #38bdf8; width: 14px; margin-top: -4px; margin-bottom: -4px; border-radius: 7px; }"
+                          "QSlider::sub-page:horizontal { background: #0ea5e9; border-radius: 3px; }";
+
+    for (int i = 0; i < 4; ++i) {
+        QLabel *nameLabel = new QLabel(motors[i].name, this);
+        nameLabel->setStyleSheet("color: #e2e8f0; font-size: 11px;");
+        motorGrid->addWidget(nameLabel, i, 0);
+
+        QSlider* currentSlider = new QSlider(Qt::Horizontal, this);
+        currentSlider->setRange(0, 255);
+        currentSlider->setValue(0); 
+        currentSlider->setStyleSheet(sliderStyle);
+        
+        *(motors[i].slider) = currentSlider;
+        motorGrid->addWidget(currentSlider, i, 1);
+
+        QLabel *currentLabel = new QLabel("0", this);
+        currentLabel->setStyleSheet("color: #38bdf8; font-weight: bold; min-width: 25px; font-size: 11px;");
+        
+        *(motors[i].label) = currentLabel;
+        motorGrid->addWidget(currentLabel, i, 2);
+
+        connect(currentSlider, &QSlider::valueChanged, this, &MainWindow::onMotorSliderChanged);
+    }
+    leftLayout->addWidget(motorGroupBox);
 
     btnReset = new QPushButton("RESET HỆ THỐNG (EMERGENCY STOP)", this);
     btnReset->setStyleSheet("QPushButton { background-color: #dc2626; color: white; padding: 12px; font-weight: bold; font-size: 14px; border-radius: 5px; border: none; } "
@@ -140,33 +179,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     mainLayout->addLayout(leftLayout, 4);
     
-    // --- THÊM: BẢNG ĐIỀU KHIỂN ĐỘNG CƠ ĐỘC LẬP CHẾ ĐỘ 4 ---
-    QLabel *motorTitle = new QLabel("TEST ĐỘNG CƠ ĐỘC LẬP:", this);
-    motorTitle->setStyleSheet("font-weight: bold; color: #cbd5e1; margin-top: 5px;");
-    controlGroupLayout->addWidget(motorTitle);
-
-    btnFL = new QPushButton("TRƯỚC TRÁI (FL)", this);
-    btnFR = new QPushButton("TRƯỚC PHẢI (FR)", this);
-    btnRL = new QPushButton("SAU TRÁI (RL)", this);
-    btnRR = new QPushButton("SAU PHẢI (RR)", this);
-
-    // Cấu hình Style riêng cho các nút test động cơ (màu xanh dương đậm)
-    QString motorBtnStyle = "QPushButton { background-color: #1e3a8a; color: #00ffcc; border: 1px solid #3b82f6; border-radius: 4px; padding: 6px; font-size: 11px; }"
-                            "QPushButton:pressed { background-color: #2563eb; }";
-    btnFL->setStyleSheet(motorBtnStyle);
-    btnFR->setStyleSheet(motorBtnStyle);
-    btnRL->setStyleSheet(motorBtnStyle);
-    btnRR->setStyleSheet(motorBtnStyle);
-
-    // Bố trí 4 nút thành dạng lưới 2x2
-    QGridLayout *motorGrid = new QGridLayout();
-    motorGrid->setSpacing(6);
-    motorGrid->addWidget(btnFL, 0, 0);
-    motorGrid->addWidget(btnFR, 0, 1);
-    motorGrid->addWidget(btnRL, 1, 0);
-    motorGrid->addWidget(btnRR, 1, 1);
-    controlGroupLayout->addLayout(motorGrid);
-
     // CỘT PHẢI
     QVBoxLayout *rightLayout = new QVBoxLayout();
     rightLayout->setSpacing(8);
@@ -200,66 +212,50 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
             dcbSerialParams.Parity = NOPARITY;
             SetCommState(hSerial, &dcbSerialParams);
             
-            // --- CẤU HÌNH TIMEOUTS CHUẨN PHI CHẶN (NON-BLOCKING) ---
             COMMTIMEOUTS timeouts = { 0 };
-            timeouts.ReadIntervalTimeout         = MAXDWORD; // Đọc ngay lập tức bộ đệm hiện tại
+            timeouts.ReadIntervalTimeout         = MAXDWORD; 
             timeouts.ReadTotalTimeoutMultiplier  = 0;
-            timeouts.ReadTotalTimeoutConstant    = 0;        // Ép ReadFile không được đợi dữ liệu
+            timeouts.ReadTotalTimeoutConstant    = 0;        
             timeouts.WriteTotalTimeoutMultiplier = 0;
-            timeouts.WriteTotalTimeoutConstant   = 10;       // Giới hạn ghi lệnh lái trong 10ms
+            timeouts.WriteTotalTimeoutConstant   = 10;       
             SetCommTimeouts(hSerial, &timeouts);
-            // -------------------------------------------------------
 
             currentModeLabel->setText("TRẠNG THÁI: ĐÃ KẾT NỐI CÁP USB THÀNH CÔNG (9600 Bps)");
             currentModeLabel->setStyleSheet("color: #10b981; font-weight: bold;");
         }
     }
 
-    // Kết nối các nút tiến lùi
-    connect(masterSlider, &QSlider::valueChanged, this, &MainWindow::onMasterSpeedChanged);
+    // Kết nối các nút và Slider hệ thống
+    connect(masterSlider, &QSlider::valueChanged, this, &MainWindow::onMasterSliderChanged);
     connect(btnUp, &QPushButton::clicked, this, &MainWindow::onMoveUpClicked);
     connect(btnDown, &QPushButton::clicked, this, &MainWindow::onMoveDownClicked);
     connect(btnLeft, &QPushButton::clicked, this, &MainWindow::onMoveLeftClicked);
     connect(btnRight, &QPushButton::clicked, this, &MainWindow::onMoveRightClicked);
     connect(btnStop, &QPushButton::clicked, this, &MainWindow::onStopCarClicked);
     connect(btnReset, &QPushButton::clicked, this, &MainWindow::onResetPressed);
-    // Kết nối các nút bấm độc lập
-    connect(btnFL, &QPushButton::clicked, this, [this]() { processSingleMotorMovement("FL"); });
-    connect(btnFR, &QPushButton::clicked, this, [this]() { processSingleMotorMovement("FR"); });
-    connect(btnRL, &QPushButton::clicked, this, [this]() { processSingleMotorMovement("RL"); });
-    connect(btnRR, &QPushButton::clicked, this, [this]() { processSingleMotorMovement("RR"); });
 
-    // --- KHỞI TẠO TIẾN TRÌNH PYTHON CHẠY NGẦM VỚI BỘ CHẨN ĐOÁN LỖI --- //
-   
+    // --- KHỔI TẠO TIẾN TRÌNH PYTHON CHẠY NGẦM --- //
     pythonProcess = new QProcess(this);
- 
-    // Đọc luồng dữ liệu chuẩn (stdout)
     connect(pythonProcess, &QProcess::readyReadStandardOutput, this, &MainWindow::readPythonOutput);
  
-    // Lắng nghe lỗi hệ thống của Python (stderr) và in ra cửa sổ Application Output của Qt
     connect(pythonProcess, &QProcess::readyReadStandardError, this, [this]() {
         QByteArray errData = pythonProcess->readAllStandardError();
         qDebug() << "[PYTHON SYSTEM ERROR]:" << errData;
- });
+    });
 
-    // BỔ SUNG: Theo dõi sự kiện tiến trình Python bị đóng đột ngột
     connect(pythonProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), 
          this, [this](int exitCode, QProcess::ExitStatus exitStatus) {
-        qDebug() << "[PROCESS FINISHED]: Tiến trình Python đã dừng. Exit Code:" << exitCode;
+        Q_UNUSED(exitStatus);
+        qDebug() << "[PROCESS FINISHED]:" << exitCode;
         currentModeLabel->setText("LỖI: TIẾN TRÌNH PYTHON BỊ ĐÓNG ĐỘT NGỘT!");
         currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
- });
+    });
 
-    // Tự động lấy đường dẫn tuyệt đối của file hand_tracker.py nằm cùng thư mục file .exe
     QString scriptPath = QCoreApplication::applicationDirPath() + "/hand_tracker.py";
-    qDebug() << "Đang tìm file Python tại đường dẫn:" << scriptPath;
-
-    QString pythonPath =
-    "C:/Users/duc/AppData/Local/Programs/Python/Python312/python.exe";
-
+    QString pythonPath = "C:/Users/duc/AppData/Local/Programs/Python/Python312/python.exe";
     pythonProcess->start(pythonPath, QStringList() << scriptPath);
 
- // --- TỰ ĐỘNG ĐỌC DỮ LIỆU CẢM BIẾN TỪ ARDUINO (MỖI 100ms) --- //
+    // --- ĐỌC DỮ LIỆU CẢM BIẾN TỪ ARDUINO (MỖI 100ms) --- //
     if (hSerial != INVALID_HANDLE_VALUE) {
         serialTimer = new QTimer(this);
         connect(serialTimer, &QTimer::timeout, this, &MainWindow::readSerialData);
@@ -271,7 +267,6 @@ MainWindow::~MainWindow() {
     if (hSerial != INVALID_HANDLE_VALUE) {
         CloseHandle(hSerial);
     }
-    // Đóng tiến trình Python an toàn
     if (pythonProcess && pythonProcess->state() == QProcess::Running) {
         pythonProcess->terminate();
         pythonProcess->waitForFinished(1000);
@@ -282,7 +277,6 @@ MainWindow::~MainWindow() {
 // KHỐI 2: ĐỌC VÀ PHÂN TÍCH LUỒNG DỮ LIỆU ĐẦU VÀO (INPUTS)
 // ============================================================================
 
-    // --- Đọc Python --- //
 void MainWindow::readPythonOutput() {
     while (pythonProcess->canReadLine()) {
         QByteArray line = pythonProcess->readLine().trimmed();
@@ -293,6 +287,41 @@ void MainWindow::readPythonOutput() {
             continue;
         }
 
+        // ⭐ ĐÓN VÀ PHÂN TÍCH CHUỖI ĐIỀU KHIỂN HỆ THỐNG 2 TAY TỪ PYTHON BẮN LÊN
+        if (line.startsWith("MODE:5")) {
+            QString cmdStr = QString::fromUtf8(line);
+            
+            // Cập nhật text đồ họa trên trạm điều khiển để hiển thị đúng hành vi thực tế của xe
+            if (cmdStr.contains("DIR:W;")) {
+                currentModeLabel->setText("CHẾ ĐỘ [2 TAY]: TAY 2 ĐIỀU HƯỚNG XE TIẾN TỚI ⬆️");
+                currentModeLabel->setStyleSheet("color: #00ffcc; font-weight: bold;");
+            } else if (cmdStr.contains("DIR:S;")) {
+                currentModeLabel->setText("CHẾ ĐỘ [2 TAY]: TAY 2 ĐIỀU HƯỚNG XE LÙI LẠI ⬇️");
+                currentModeLabel->setStyleSheet("color: #f59e0b; font-weight: bold;");
+            } else if (cmdStr.contains("DIR:A;")) {
+                currentModeLabel->setText("CHẾ ĐỘ [2 TAY]: TAY 2 ĐIỀU HƯỚNG XOAY TRÁI ↩️");
+                currentModeLabel->setStyleSheet("color: #38bdf8; font-weight: bold;");
+            } else if (cmdStr.contains("DIR:D;")) {
+                currentModeLabel->setText("CHẾ ĐỘ [2 TAY]: TAY 2 ĐIỀU HƯỚNG XOAY PHẢI ↪️");
+                currentModeLabel->setStyleSheet("color: #38bdf8; font-weight: bold;");
+            } else if (cmdStr.contains("DIR:CIRCLE;")) {
+                currentModeLabel->setText("CHẾ ĐỘ [2 TAY]: PHÁT HIỆN XOAY VÒNG - XE QUAY TRÒN TẠI CHỖ REVOLUTION 🔄");
+                currentModeLabel->setStyleSheet("color: #a855f7; font-weight: bold;");
+            } else {
+                currentModeLabel->setText("CHẾ ĐỘ [5 NGÓN]: KHỞI CHẠY AI VISION TỰ ĐỘNG DÒ LINE CAMERA 🤖");
+                currentModeLabel->setStyleSheet("color: #10b981; font-weight: bold;");
+            }
+
+            // Đẩy lệnh xuống vi điều khiển Arduino qua cổng Serial Win32 API công nghiệp
+            if (hSerial != INVALID_HANDLE_VALUE) {
+                DWORD bytesWritten;
+                std::string data = line.toStdString();
+                WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+            }
+            continue;
+        }
+
+        // Đoạn xử lý ảnh nén Base64 cũ giữ nguyên vẹn bên dưới...
         int colonIdx = line.indexOf(':');
         if (colonIdx != -1) {
             QByteArray fingerPart = line.left(colonIdx);
@@ -304,7 +333,6 @@ void MainWindow::readPythonOutput() {
                 handleGesture(fingers);
             }
 
-            // Giải mã chuỗi ảnh Base64 thu được
             QByteArray jpegData = QByteArray::fromBase64(base64Part);
             QImage img;
             if (img.loadFromData(jpegData, "JPG")) {
@@ -313,62 +341,42 @@ void MainWindow::readPythonOutput() {
         }
     }
 }
-    // --- Đếm ngón --- //
+
 void MainWindow::handleGesture(int fingers) {
     if (fingers == -1) return;
-
     if (currentMode == 0 && masterSlider->value() == 0 && fingers == 0) return;
     
     int previousMode = currentMode;
     switch (fingers) {
         case 0:
             currentMode = 0;
-            currentTestingMotor = ""; // Reset bộ nhớ test động cơ
             currentModeLabel->setText("CHẾ ĐỘ [NẮM ĐẤM]: DỪNG XE KHẨN CẤP (STOP 🛑)");
             currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
             onStopCarClicked();
             break;
         case 1:
             currentMode = 1;
-            currentTestingMotor = "";
             currentModeLabel->setText("CHẾ ĐỘ [1 NGÓN]: TỰ ĐỘNG DÒ LINE (ACTIVE 🟢)");
             currentModeLabel->setStyleSheet("color: #10b981; font-weight: bold;");
             break;
         case 2:
             currentMode = 2;
-            currentTestingMotor = "";
             currentModeLabel->setText("CHẾ ĐỘ [2 NGÓN]: TỰ ĐỘNG TRÁNH VẬT CẢN 🔵");
             currentModeLabel->setStyleSheet("color: #3b82f6; font-weight: bold;");
             break;
         case 3:
             currentMode = 3;
-            currentTestingMotor = "";
             currentModeLabel->setText("CHẾ ĐỘ [3 NGÓN]: ĐIỀU KHIỂN TỰ DO (MANUAL DRIVE 🟡)");
             currentModeLabel->setStyleSheet("color: #eab308; font-weight: bold;");
             break;
         case 4:
-            currentMode = 4;
-            currentTestingMotor = ""; // Vừa giơ 4 ngón lên thì chưa chọn bánh nào, đợi ấn nút
-            currentModeLabel->setText("CHẾ ĐỘ [4 NGÓN]: TEST RIÊNG BIỆT ĐỘNG CƠ (AN TOÀN 🟣)");
-            currentModeLabel->setStyleSheet("color: #a855f7; font-weight: bold;"); 
-            
-            // Lệnh phanh đứng im an toàn ban đầu
-            {
-                QString stopPayload = "MODE:4;FL:0;FR:0;RL:0;RR:0;DIR:MOTOR_TEST;\n";
-                std::string data = stopPayload.toStdString();
-                DWORD bytesWritten;
-                if (hSerial != INVALID_HANDLE_VALUE) {
-                    WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
-                }
-            }
+            // ⭐ ĐÃ KHỬ CHẾ ĐỘ 4 NGÓN: Bỏ qua không đổi Mode rác
             break;
         case 5:
             currentMode = 5;
-            currentTestingMotor = ""; // Reset bộ nhớ test động cơ
             currentModeLabel->setText("CHẾ ĐỘ [5 NGÓN]: KHỞI CHẠY AI VISION TRÊN CAMERA (AUTO 🤖)");
-            currentModeLabel->setStyleSheet("color: #00ffcc; font-weight: bold;"); // Màu xanh neon AI
+            currentModeLabel->setStyleSheet("color: #00ffcc; font-weight: bold;"); 
             break;
-
         default:
             break;
     }
@@ -377,27 +385,23 @@ void MainWindow::handleGesture(int fingers) {
         sendControlPacket();
     }
 }
-    // --- Đọc Serial --- //
+
 void MainWindow::readSerialData() {
-    if (hSerial == INVALID_HANDLE_VALUE) return;
+    if (hSerial != INVALID_HANDLE_VALUE) return;
 
     DWORD bytesAvailable;
     COMSTAT comStat; 
     
-    // Sử dụng ClearCommError để lấy chính xác số lượng bytes đang chờ trong bộ đệm nhận (cbInQue)
     if (ClearCommError(hSerial, NULL, &comStat)) {
         bytesAvailable = comStat.cbInQue; 
         
         if (bytesAvailable > 0) {
-            char* buffer = new char[bytesAvailable + 1];
+            QByteArray buffer;
+            buffer.resize(bytesAvailable);
             DWORD bytesRead;
             
-            if (ReadFile(hSerial, buffer, bytesAvailable, &bytesRead, NULL) && bytesRead > 0) {
-                buffer[bytesRead] = '\0';
-                QString rawData = QString::fromLocal8Bit(buffer);
-                
-                // Ghi log thẳng ra Terminal/Debug Console của VS Code để kiểm tra mạch
-                qDebug() << "[RAW DATA TỪ ARDUINO]:" << rawData;
+            if (ReadFile(hSerial, buffer.data(), bytesAvailable, &bytesRead, NULL) && bytesRead > 0) {
+                QString rawData = QString::fromLocal8Bit(buffer.constData(), bytesRead);
                 
                 static QString incompleteLine = "";
                 incompleteLine += rawData;
@@ -407,7 +411,7 @@ void MainWindow::readSerialData() {
                     QString validLine = incompleteLine.left(newlinePos).trimmed();
                     incompleteLine = incompleteLine.mid(newlinePos + 1);
                     
-                    if (validLine.isEmpty()) continue;
+                    if (validLine.isEmpty()) continue; 
                     
                     int battery = 100;
                     double distance = -1.0;
@@ -431,20 +435,17 @@ void MainWindow::readSerialData() {
                         }
                     }
                     
-                   if (parseSuccess) {
-                        // Gọi hàm cập nhật giao diện đồ họa từ dữ liệu đã phân tích
+                    if (parseSuccess) {
                         updateUI(battery, distance, lState);
                     } 
                 }
             }
-            delete[] buffer;
         }
     }
 }
-    // --- Thiết lập phím --- //
+
 void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (event->isAutoRepeat()) return;
-    // Khi người dùng chủ động can thiệp bằng tay, ép chặt chế độ MANUAL
     currentMode = 3;
 
     switch (event->key()) {
@@ -455,6 +456,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         default: QMainWindow::keyPressEvent(event); break;
     }
 }
+
 void MainWindow::keyReleaseEvent(QKeyEvent *event) {
     if (event->isAutoRepeat()) return;
 
@@ -472,7 +474,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
 // ============================================================================
 // KHỐI 3: CẬP NHẬT ĐỒ HỌA & HIỂN THỊ GIAO DIỆN (GUI OUTPUTS)
 // ============================================================================
-    // --- Pin, line, khoảng cách --- //
+
 void MainWindow::updateUI(int battery, double dist, int lineState) {
     batteryBar->setValue(battery);
     
@@ -484,7 +486,6 @@ void MainWindow::updateUI(int battery, double dist, int lineState) {
                                   "QProgressBar::chunk { background-color: #10b981; }");
     }
 
-    // Hiển thị khoảng cách siêu âm
     if (dist >= 99.0) {
         obstacleWarning->setText("Đường thoáng (Safe)");
         obstacleWarning->setStyleSheet("color: #10b981; font-weight: bold;"); 
@@ -497,7 +498,6 @@ void MainWindow::updateUI(int battery, double dist, int lineState) {
         }
     }
 
-    // Hiển thị trạng thái mắt đọc hồng ngoại
     if (lineState == -2) {
         lineStatus->setText("Dò line: LỆCH TRÁI QUÁ NHIỀU (<<-)");
         lineStatus->setStyleSheet("color: #f59e0b; font-weight: bold;");
@@ -523,14 +523,13 @@ void MainWindow::updateUI(int battery, double dist, int lineState) {
         lineStatus->setStyleSheet("color: #10b981; font-weight: bold;"); 
     }
 
-    // Phanh khẩn cấp từ xa bằng phần mềm bảo vệ phần cứng
     if (currentMode == 2 && dist < 25.0 && dist > 0.1) {
         masterSlider->setValue(0); 
         currentModeLabel->setText("CẢNH BÁO NGUY HIỂM: TỰ ĐỘNG PHANH TRÁNH VẬT CẢN!");
         currentModeLabel->setStyleSheet("color: #dc2626; font-weight: bold;");
     }
 }
-    // --- Camera --- //
+
 void MainWindow::updateCameraFrame(const QImage &frame) {
     QImage processedFrame = frame.copy();
     QPainter painter(&processedFrame);
@@ -542,14 +541,13 @@ void MainWindow::updateCameraFrame(const QImage &frame) {
     if (currentMode == 1) modeStr = "LINE FOLLOWING";
     else if (currentMode == 2) modeStr = "OBSTACLE AVOIDANCE";
     else if (currentMode == 3) modeStr = "MANUAL CONTROL";
-    else if (currentMode == 4) modeStr = "IMAGE PROCESSING (Q)";
     else if (currentMode == 5) modeStr = "AI VISION ACTIVE 🧠";
 
     painter.drawText(15, 25, QString("HUST AI VISION | CHẾ ĐỘ: %1").arg(modeStr));
     painter.end();
     
     cameraDisplay->setPixmap(QPixmap::fromImage(processedFrame).scaled(
-        QSize(640, 480), 
+        QSize(800, 600), 
         Qt::KeepAspectRatio,          
         Qt::SmoothTransformation
     ));
@@ -558,103 +556,134 @@ void MainWindow::updateCameraFrame(const QImage &frame) {
 // ============================================================================
 // KHỐI 4: ĐIỀU KHIỂN & ĐÓNG GÓI LỆNH ĐẨY XUỐNG CỔNG XUẤT (CONTROL OUTPUTS)
 // ============================================================================
-    // --- Set tốc độ tức thời --- //
-void MainWindow::onMasterSpeedChanged(int value) {
-    masterValueLabel->setText(QString("%1").arg(value));
-    speedDisplay->display(value); 
+
+void MainWindow::onMasterSliderChanged() {
+    int value = masterSlider->value(); 
     
-    // Nếu đang ở Mode 4 (Test động cơ độc lập)
-    if (currentMode == 4) {
-        // Nếu chưa bấm chọn nút test bánh nào cụ thể thì không phát lệnh quay bậy
-        if (currentTestingMotor.isEmpty()) return; 
+    masterValueLabel->setText(QString::number(value));
+    if (speedDisplay) speedDisplay->display(value); 
 
-        int fl = 0, fr = 0, rl = 0, rr = 0;
+    m1Slider->blockSignals(true);
+    m2Slider->blockSignals(true);
+    m3Slider->blockSignals(true);
+    m4Slider->blockSignals(true);
 
-        // Lấy giá trị mới (`value`) gán trực tiếp vào bánh đang được chọn test
-        if (currentTestingMotor == "FL") fl = value;
-        else if (currentTestingMotor == "FR") fr = value;
-        else if (currentTestingMotor == "RL") rl = value;
-        else if (currentTestingMotor == "RR") rr = value;
+    m1Slider->setValue(value);
+    m2Slider->setValue(value);
+    m3Slider->setValue(value);
+    m4Slider->setValue(value);
 
-        QString payload = QString("MODE:4;FL:%1;FR:%2;RL:%3;RR:%4;DIR:MOTOR_TEST;\n").arg(fl).arg(fr).arg(rl).arg(rr);
-                            
-        std::string data = payload.toStdString();
-        DWORD bytesWritten;
-        
-        if (hSerial != INVALID_HANDLE_VALUE) {
-            WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
-        }
-        return; 
+    m1ValueLabel->setText(QString::number(value));
+    m2ValueLabel->setText(QString::number(value));
+    m3ValueLabel->setText(QString::number(value));
+    m4ValueLabel->setText(QString::number(value));
+
+    m1Slider->blockSignals(false);
+    m2Slider->blockSignals(false);
+    m3Slider->blockSignals(false);
+    m4Slider->blockSignals(false);
+
+    QString direction = "W"; 
+    if (currentMode == 5) {
+        direction = "AI_CONTROL"; 
+    } else {
+        if (currentModeLabel->text().contains("LÙI")) direction = "S";
+        else if (currentModeLabel->text().contains("TRÁI")) direction = "A";
+        else if (currentModeLabel->text().contains("PHẢI")) direction = "D";
     }
-        if (currentMode == 5) {
-        QString payload = QString("MODE:5;FL:%1;FR:%2;RL:%3;RR:%4;DIR:AI_CONTROL;\n").arg(value).arg(value).arg(value).arg(value);
-        std::string data = payload.toStdString();
+
+    int modeToSend = (currentMode == 0) ? 3 : currentMode; 
+    QString command = QString("MODE:%1;FL:%2;FR:%3;RL:%4;RR:%5;DIR:%6;\n")
+                        .arg(modeToSend).arg(value).arg(value).arg(value).arg(value).arg(direction);
+                      
+    if (hSerial != INVALID_HANDLE_VALUE) {
         DWORD bytesWritten;
-        if (hSerial != INVALID_HANDLE_VALUE) {
-            WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
-        }
-        return;
-    }
-    
-    // Chế độ lái tự do (Mode 3)
-    if (currentMode == 3) {
-        sendControlPacket(); 
+        std::string data = command.toStdString();
+        WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
     }
 }
-    // --- Chạy bình thường --- //
-void MainWindow::processManualMovement(QString direction) {
-    int currentSpeed = masterSlider->value();
-    if (currentSpeed == 0) {
-        currentSpeed = 150; 
-    }
 
+void MainWindow::onMotorSliderChanged() {
+    int v1 = m1Slider->value(); 
+    int v2 = m2Slider->value(); 
+    int v3 = m3Slider->value(); 
+    int v4 = m4Slider->value(); 
+
+    m1ValueLabel->setText(QString::number(v1));
+    m2ValueLabel->setText(QString::number(v2));
+    m3ValueLabel->setText(QString::number(v3));
+    m4ValueLabel->setText(QString::number(v4));
+
+    masterValueLabel->setText("--"); 
+
+    QString direction = "W";
+    if (currentModeLabel->text().contains("LÙI")) direction = "S";
+    else if (currentModeLabel->text().contains("TRÁI")) direction = "A";
+    else if (currentModeLabel->text().contains("PHẢI")) direction = "D";
+
+    // ⭐ ĐÃ SỬA: Khi kéo thanh đơn lẻ, ép luồng về MODE 3 (Chạy tay vi chỉnh), bỏ MODE 4
+    currentMode = 3;
+    currentModeLabel->setText("CHẾ ĐỘ: VI CHỈNH ĐỘNG CƠ (MANUAL)");
+    currentModeLabel->setStyleSheet("color: #38bdf8; font-weight: bold;");
+
+    QString command = QString("MODE:3;FL:%1;FR:%2;RL:%3;RR:%4;DIR:%6;\n")
+                        .arg(v1).arg(v2).arg(v3).arg(v4).arg(direction);
+                      
+    if (hSerial != INVALID_HANDLE_VALUE) {
+        DWORD bytesWritten;
+        std::string data = command.toStdString();
+        WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+    }
+}
+
+void MainWindow::processManualMovement(QString direction) {
     currentMode = 3; 
 
     if (direction == "W") currentModeLabel->setText("TRẠNG THÁI: XE ĐANG TIẾN ⬆️");
     else if (direction == "S") currentModeLabel->setText("TRẠNG THÁI: XE ĐANG LÙI ⬇️");
     else if (direction == "A") currentModeLabel->setText("TRẠNG THÁI: XOAY TRÁI ↩️");
     else if (direction == "D") currentModeLabel->setText("TRẠNG THÁI: XOAY PHẢI ↪️");
-    
     currentModeLabel->setStyleSheet("color: #eab308; font-weight: bold;");
 
+    int defaultSpeed = 150; 
+
+    masterSlider->blockSignals(true); 
+    masterSlider->setValue(defaultSpeed);
+    masterValueLabel->setText(QString::number(defaultSpeed));
+    if (speedDisplay) speedDisplay->display(defaultSpeed); 
+    masterSlider->blockSignals(false);
+
+    m1Slider->blockSignals(true);
+    m2Slider->blockSignals(true);
+    m3Slider->blockSignals(true);
+    m4Slider->blockSignals(true);
+
+    m1Slider->setValue(defaultSpeed);
+    m2Slider->setValue(defaultSpeed);
+    m3Slider->setValue(defaultSpeed);
+    m4Slider->setValue(defaultSpeed);
+
+    m1ValueLabel->setText(QString::number(defaultSpeed));
+    m2ValueLabel->setText(QString::number(defaultSpeed));
+    m3ValueLabel->setText(QString::number(defaultSpeed));
+    m4ValueLabel->setText(QString::number(defaultSpeed));
+
+    m1Slider->blockSignals(false);
+    m2Slider->blockSignals(false);
+    m3Slider->blockSignals(false);
+    m4Slider->blockSignals(false);
+
     QString payload = QString("MODE:%1;FL:%2;FR:%3;RL:%4;RR:%5;DIR:%6;\n")
-                        .arg(currentMode).arg(currentSpeed).arg(currentSpeed)
-                        .arg(currentSpeed).arg(currentSpeed).arg(direction);
+                        .arg(currentMode).arg(defaultSpeed).arg(defaultSpeed).arg(defaultSpeed).arg(defaultSpeed).arg(direction);
                         
-    std::string data = payload.toStdString();
-    DWORD bytesWritten;
-    
     if (hSerial != INVALID_HANDLE_VALUE) {
+        DWORD bytesWritten;
+        std::string data = payload.toStdString();
         WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
     }
+    qDebug() << "Lệnh phím bấm đồng bộ Ga tổng:" << payload.trimmed();
 }
-    // --- Từng động cơ --- //
-void MainWindow::processSingleMotorMovement(QString motorName) {
-    currentMode = 4; 
-    currentTestingMotor = motorName; // 💾 Cập nhật biến thành viên của Class để hàm Slider cùng đọc được
     
-    currentModeLabel->setText(QString("TRẠNG THÁI: CHẾ ĐỘ 4 - TEST RIÊNG BIỆT [%1] ⚙️").arg(motorName));
-    currentModeLabel->setStyleSheet("color: #a855f7; font-weight: bold;");
-
-    int targetSpeed = masterSlider->value(); 
-    int fl = 0, fr = 0, rl = 0, rr = 0;
-
-    if (motorName == "FL") fl = targetSpeed;
-    else if (motorName == "FR") fr = targetSpeed;
-    else if (motorName == "RL") rl = targetSpeed;
-    else if (motorName == "RR") rr = targetSpeed;
-
-    QString payload = QString("MODE:%1;FL:%2;FR:%3;RL:%4;RR:%5;DIR:MOTOR_TEST;\n")
-                        .arg(currentMode).arg(fl).arg(fr).arg(rl).arg(rr);
-                        
-    std::string data = payload.toStdString();
-    DWORD bytesWritten;
-    
-    if (hSerial != INVALID_HANDLE_VALUE) {
-        WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
-    }
-}
-    // --- Gửi tốc độ tức thời --- //
 void MainWindow::sendControlPacket() {
     int currentSpeed = masterSlider->value();
     
@@ -667,12 +696,12 @@ void MainWindow::sendControlPacket() {
         WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
     }
 }
-    // --- Set phím --- //
+
 void MainWindow::onMoveUpClicked()    { processManualMovement("W"); }
 void MainWindow::onMoveDownClicked()  { processManualMovement("S"); }
 void MainWindow::onMoveLeftClicked()  { processManualMovement("A"); }
 void MainWindow::onMoveRightClicked() { processManualMovement("D"); }
-    // --- Dừng --- //
+
 void MainWindow::onStopCarClicked() {
     currentMode = 0; 
     currentModeLabel->setText("TRẠNG THÁI: ĐÃ DỪNG 🛑");
@@ -686,7 +715,7 @@ void MainWindow::onStopCarClicked() {
         WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
     }
 }
-    // --- reset --- //
+
 void MainWindow::onResetPressed() {
     masterSlider->setValue(0); 
     onStopCarClicked(); 

@@ -28,7 +28,7 @@
 // --- 3. BIẾN TRẠNG THÁI HỆ THỐNG ---
 // ============================================================================
 int speedFL = 0, speedFR = 0, speedRL = 0, speedRR = 0;
-int currentMode = -1; // -1: Tự động chạy pin khi vừa khởi động
+int currentMode = -1; // -1: Tự động chạy kết hợp (Line + Siêu âm) khi vừa khởi động
 
 void executeMotor();
 void stopCar();
@@ -41,7 +41,7 @@ void handleAutoMode();
 // ============================================================================
 void setup() {
   Serial.begin(9600);       
-  Serial.setTimeout(10); // SỬA LỖI ĐỘ TRỄ: Ép thời gian đợi dữ liệu xuống 10ms
+  Serial.setTimeout(10); // Ép thời gian đợi dữ liệu xuống 10ms chống trễ mẫu
   
   pinMode(PWM_FL, OUTPUT); pinMode(DIR_FL, OUTPUT);
   pinMode(PWM_RL, OUTPUT); pinMode(DIR_RL, OUTPUT);
@@ -66,86 +66,92 @@ void setup() {
 // ============================================================================
 void loop() {
   // ------------------------------------------------------------------------
-  // LUỒNG 1: NHẬN LỆNH ĐIỀU KHIỂN TỪ GUI C++ (HOẶC AI PYTHON) GỬI XUỐNG
+  // LUỒNG 1: NHẬN LỆNH ĐIỀU KHIỂN TỪ GUI C++ (ĐÃ SỬA ĐỔI BÓC TÁCH CHUẨN)
   // ------------------------------------------------------------------------
   if (Serial.available() > 0) {
     String cmd = Serial.readStringUntil('\n');
     cmd.trim();
     
-    int modeIdx = cmd.indexOf("MODE:");
-    int flIdx   = cmd.indexOf(";FL:");
-    int frIdx   = cmd.indexOf(";FR:");
-    int rlIdx   = cmd.indexOf(";RL:");
-    int rrIdx   = cmd.indexOf(";RR:");
-    int dirIdx  = cmd.indexOf(";DIR:");
+    // Khởi tạo các biến tạm để lưu dữ liệu bóc tách
+    int p_mode = -1;
+    int p_fl = -1, p_fr = -1, p_rl = -1, p_rr = -1;
+    String p_dir = "";
     
-    if (modeIdx != -1 && flIdx != -1 && frIdx != -1 && rlIdx != -1 && rrIdx != -1) {
-      currentMode = cmd.substring(modeIdx + 5, flIdx).toInt();
+    // Tách chuỗi theo từng cặp key:value dựa trên dấu ';'
+    int startIdx = 0;
+    int endIdx = cmd.indexOf(';');
+    
+    while (endIdx != -1) {
+      String token = cmd.substring(startIdx, endIdx);
+      token.trim();
       
-      // Khẩn cấp: Nếu Mode = 0, lập tức phanh xe và thoát vòng lặp
+      int colonIdx = token.indexOf(':');
+      if (colonIdx != -1) {
+        String key = token.substring(0, colonIdx);
+        String val = token.substring(colonIdx + 1);
+        
+        if (key == "MODE") p_mode = val.toInt();
+        else if (key == "FL")  p_fl = val.toInt();
+        else if (key == "FR")  p_fr = val.toInt();
+        else if (key == "RL")  p_rl = val.toInt();
+        else if (key == "RR")  p_rr = val.toInt();
+        else if (key == "DIR") p_dir = val;
+      }
+      
+      startIdx = endIdx + 1;
+      endIdx = cmd.indexOf(';', startIdx);
+    }
+    
+    // Nếu bóc tách thành công đầy đủ các tham số kiểm tra
+    if (p_mode != -1) {
+      currentMode = p_mode;
+      
       if (currentMode == 0) {
-        stopCar(); 
-        return; 
+        stopCar();
+        return;
       }
       
-      // Bóc tách hướng di chuyển (Dùng chung cho cả phím bấm Manual và lệnh rẽ tự động từ AI)
-      String direction = "";
-      if (dirIdx != -1) {
-        int endDirIdx = cmd.indexOf(";", dirIdx + 5);
-        direction = (endDirIdx != -1) ? cmd.substring(dirIdx + 5, endDirIdx) : cmd.substring(dirIdx + 5);
-      }
-      
-      // Bóc tách vận tốc nền từ thanh Slider của GUI C++ đổ xuống
-      speedFL = cmd.substring(flIdx + 4, frIdx).toInt();
-      speedFR = cmd.substring(frIdx + 4, rlIdx).toInt();
-      speedRL = cmd.substring(rlIdx + 4, rrIdx).toInt();
-      
-      int endRrIdx = cmd.indexOf(";", rrIdx + 4);
-      speedRR = (endRrIdx != -1) ? cmd.substring(rrIdx + 4, endRrIdx).toInt() : cmd.substring(rrIdx + 4).toInt();
+      // Gán giá trị an toàn vào biến toàn cục
+      speedFL = (p_fl != -1) ? p_fl : 0;
+      speedFR = (p_fr != -1) ? p_fr : 0;
+      speedRL = (p_rl != -1) ? p_rl : 0;
+      speedRR = (p_rr != -1) ? p_rr : 0;
       
       // ------------------------------------------------------------------------
-      // CHẾ ĐỘ 3 (TAY) HOẶC CHẾ ĐỘ 5 (AI CAMERA): ĐIỀU HƯỚNG MECANUM ĐỒNG BỘ
+      // CHẾ ĐỘ 3 (TAY) HOẶC CHẾ ĐỘ 5: ĐIỀU HƯỚNG THEO ĐÚNG Ý ĐỨC (TRẢ VỀ PHẦN CỨNG GỐC)
       // ------------------------------------------------------------------------
       if (currentMode == 3 || currentMode == 5) {
-        int maxSpd = max(max(abs(speedFL), abs(speedFR)), max(abs(speedRL), abs(speedRR)));
-        if (maxSpd == 0) maxSpd = 140; // Tốc độ nền an toàn chống kẹt động cơ nếu Slider bằng 0
+        // Trả lại nguyên vẹn cấu hình chân DIR ban đầu đang chạy đúng của bạn
+        if (p_dir == "W") { // TIẾN THẲNG
+          digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
+          digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
+        } 
+        else if (p_dir == "S") { // LÙI XE
+          digitalWrite(DIR_FL, HIGH); digitalWrite(DIR_RL, HIGH);
+          digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, LOW);
+        } 
+        else if (p_dir == "A") { // XOAY LÁI TRÁI
+          digitalWrite(DIR_FL, HIGH); digitalWrite(DIR_RL, HIGH);
+          digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
+        } 
+        else if (p_dir == "D") { // XOAY LÁI PHẢI
+          digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
+          digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, LOW);
+        }
 
-        if (direction == "W") { // TIẾN THẲNG
-          digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
-          digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
-          speedFL = speedFR = speedRL = speedRR = maxSpd;
-        } 
-        else if (direction == "S") { // LÙI XE / PHANH AI
-          digitalWrite(DIR_FL, HIGH); digitalWrite(DIR_RL, HIGH);
-          digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, LOW);
-          speedFL = speedFR = speedRL = speedRR = maxSpd;
-        } 
-        else if (direction == "A") { // XOAY LÁI SANG TRÁI (Ép xe sửa sai lệch làn phải)
-          digitalWrite(DIR_FL, HIGH); digitalWrite(DIR_RL, HIGH);
-          digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
-          speedFL = speedFR = speedRL = speedRR = maxSpd;
-        } 
-        else if (direction == "D") { // XOAY LÁI SANG PHẢI (Ép xe sửa sai lệch làn trái)
-          digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
-          digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, LOW);
-          speedFL = speedFR = speedRL = speedRR = maxSpd;
-        }
-        else { // Trường hợp đổi chế độ chưa rõ hướng, triệt tiêu xung âm để bảo vệ driver
-          speedFL = abs(speedFL); speedFR = abs(speedFR);
-          speedRL = abs(speedRL); speedRR = abs(speedRR);
-        }
-        executeMotor(); 
+        // Cấp xung PWM chuẩn, bánh nào = 0 thì ngắt hẳn chân đó
+        if (speedFL > 0)  { analogWrite(PWM_FL, speedFL); }   else { analogWrite(PWM_FL, 0); }
+        if (speedFR > 0)  { analogWrite(PWM_FR, speedFR); }   else { analogWrite(PWM_FR, 0); }
+        if (speedRL > 0)  { analogWrite(PWM_RL, speedRL); }   else { analogWrite(PWM_RL, 0); }
+        if (speedRR > 0)  { analogWrite(PWM_RR, speedRR); }   else { analogWrite(PWM_RR, 0); }
       }
       
-      // ------------------------------------------------------------------------
-      // CHẾ ĐỘ 4: LIVE-TEST RIÊNG BIỆT TỪNG ĐỘNG CƠ (HỖ TRỢ ĐẢO CHIỀU XUNG ÂM)
-      // ------------------------------------------------------------------------
+      // Chế độ 4: Live test độc lập
       else if (currentMode == 4) {
-        if (speedFL >= 0) { digitalWrite(DIR_FL, LOW); } else { digitalWrite(DIR_FL, HIGH); speedFL = abs(speedFL); }
-        if (speedFR >= 0) { digitalWrite(DIR_FR, HIGH); } else { digitalWrite(DIR_FR, LOW);  speedFR = abs(speedFR); }
-        if (speedRL >= 0) { digitalWrite(DIR_RL, LOW); } else { digitalWrite(DIR_RL, HIGH); speedRL = abs(speedRL); }
-        if (speedRR >= 0) { digitalWrite(DIR_RR, HIGH); } else { digitalWrite(DIR_RR, LOW);  speedRR = abs(speedRR); }
-        executeMotor();
+        digitalWrite(DIR_FL, (speedFL >= 0) ? LOW : HIGH);   analogWrite(PWM_FL, abs(speedFL));
+        digitalWrite(DIR_FR, (speedFR >= 0) ? HIGH : LOW);   analogWrite(PWM_FR, abs(speedFR));
+        digitalWrite(DIR_RL, (speedRL >= 0) ? LOW : HIGH);   analogWrite(PWM_RL, abs(speedRL));
+        digitalWrite(DIR_RR, (speedRR >= 0) ? HIGH : LOW);   analogWrite(PWM_RR, abs(speedRR));
       }
     }
   }
@@ -154,7 +160,10 @@ void loop() {
   // LUỒNG 2: KHI KHÔNG CÓ LỆNH SERIAL MỚI -> DUY TRÌ CHẠY TỰ ĐỘNG OFFLINE
   // ------------------------------------------------------------------------
   else {
-    if (currentMode == 1) {
+    if (currentMode == -1) {   // Mặc định ban đầu hoặc chế độ kết hợp hoàn toàn
+      handleAutoMode();
+    }
+    else if (currentMode == 1) {
       handleLineFollowing(); 
     } 
     else if (currentMode == 2) {
@@ -169,31 +178,31 @@ void loop() {
   // LUỒNG 3: TỰ ĐỘNG GỬI TELEMETRY (CẢM BIẾN) LÊN MÁY TÍNH THEO CHU KỲ (NON-BLOCKING)
   // ------------------------------------------------------------------------
   static unsigned long lastSendTime = 0;
-  if (millis() - lastSendTime > 80) { // Quét dữ liệu định kỳ mỗi 80ms để chống nghẽn cáp USB
+  if (millis() - lastSendTime > 80) { 
     lastSendTime = millis();
     
-    // 1. Kích hoạt và tính toán khoảng cách từ cảm biến siêu âm HC-SR04
+    // Đọc cảm biến siêu âm
     digitalWrite(TRIG_PIN, LOW);   delayMicroseconds(2);
     digitalWrite(TRIG_PIN, HIGH);  delayMicroseconds(10);
     digitalWrite(TRIG_PIN, LOW);
-    long duration = pulseIn(ECHO_PIN, HIGH, 30000); // Giới hạn Timeout 30ms tránh treo mạch
+    long duration = pulseIn(ECHO_PIN, HIGH, 30000); 
     float distance = (duration == 0) ? 99.0 : (duration * 0.034 / 2);
     
-    // 2. Đọc trạng thái logic của 4 mắt hồng ngoại dò line
+    // Đọc cảm biến dò line
     int L2 = digitalRead(SENSOR_L2);     
     int L1 = digitalRead(SENSOR_L1);     
     int C  = digitalRead(SENSOR_CENTER); 
     int R1 = digitalRead(SENSOR_R1);     
     
     int lState = 0; 
-    if (L2 == HIGH && L1 == HIGH && C == HIGH && R1 == HIGH) { lState = 9; }     // Vạch ngang / Dừng bài
-    else if (L2 == HIGH) { lState = -2; }                                        // Lệch trái nặng
-    else if (L1 == HIGH) { lState = -1; }                                        // Lệch trái nhẹ
-    else if (R1 == HIGH) { lState = 1; }                                         // Lệch phải nhẹ
-    else if (C == HIGH)  { lState = 0; }                                         // Tâm đường thẳng
-    else                 { lState = 404; }                                       // Mất line hoàn toàn
+    if (L2 == HIGH && L1 == HIGH && C == HIGH && R1 == HIGH) { lState = 9; }    
+    else if (L2 == HIGH) { lState = -2; }                                       
+    else if (L1 == HIGH) { lState = -1; }                                       
+    else if (R1 == HIGH) { lState = 1; }                                        
+    else if (C == HIGH)  { lState = 0; }                                        
+    else                 { lState = 404; }                                      
     
-    // 3. Gửi gói tin chuẩn hóa lên Qt GUI (Cấm xóa hoặc thay đổi cấu trúc định dạng này)
+    // Gửi gói tin lên Qt GUI
     Serial.print("BAT:100;DIST:");
     Serial.print(distance, 1);
     Serial.print(";LINE:");
@@ -203,29 +212,29 @@ void loop() {
 }
 
 // ============================================================================
-// --- HÀM TỰ ĐỘNG: DÒ LINE BẰNG HỒNG NGOẠI (ĂN KHỚP HOÀN TOÀN MODE 1) ---
+// --- HÀM TỰ ĐỘNG: DÒ LINE BẰNG HỒNG NGOẠI (MODE 1) ---
 // ============================================================================
 void handleLineFollowing() {
   int L2 = digitalRead(SENSOR_L2); int L1 = digitalRead(SENSOR_L1);
   int C  = digitalRead(SENSOR_CENTER); int R1 = digitalRead(SENSOR_R1);
   
   if (L2 == HIGH && L1 == HIGH && C == HIGH && R1 == HIGH) { stopCar(); return; }
-  else if (L2 == HIGH) { 
+  else if (L2 == HIGH) { // Lệch trái nặng -> Xoay cua trái gấp
     digitalWrite(DIR_FL, HIGH); digitalWrite(DIR_RL, HIGH);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
     speedFL = speedRL = speedFR = speedRR = 120;
   }
-  else if (L1 == HIGH) { 
+  else if (L1 == HIGH) { // Lệch trái nhẹ -> Chỉnh lái hướng sang trái
     digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
     speedFL = speedRL = 70; speedFR = speedRR = 140;
   }
-  else if (R1 == HIGH) { 
+  else if (R1 == HIGH) { // Lệch phải nhẹ -> Chỉnh lái hướng sang phải
     digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
     speedFL = speedRL = 140; speedFR = speedRR = 70;
   }
-  else if (C == HIGH) { 
+  else if (C == HIGH) { // Đi đúng tâm
     digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
     speedFL = speedRL = speedFR = speedRR = 130;
@@ -239,7 +248,7 @@ void handleLineFollowing() {
 }
 
 // ============================================================================
-// --- HÀM TỰ ĐỘNG: NÉ VẬT CẢN BẰNG SIÊU ÂM (ĂN KHỚP HOÀN TOÀN MODE 2) ---
+// --- HÀM TỰ ĐỘNG: NÉ VẬT CẢN BẰNG SIÊU ÂM (MODE 2) ---
 // ============================================================================
 void handleObstacleAvoidance() {
   digitalWrite(TRIG_PIN, LOW);   delayMicroseconds(2);
@@ -248,19 +257,21 @@ void handleObstacleAvoidance() {
   long duration = pulseIn(ECHO_PIN, HIGH, 25000);
   int distance = (duration == 0) ? 999 : (duration * 0.034 / 2);
   
-  if (distance > 0 && distance < 25) { // Phát hiện vật cản dưới 25cm
+  if (distance > 0 && distance < 25) { 
     stopCar(); delay(300);
-    // Bước 1: Lùi xe lại một chút
+    // Bước 1: Lùi xe an toàn
     digitalWrite(DIR_FL, HIGH); digitalWrite(DIR_RL, HIGH);
     digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, LOW);
-    speedFL = speedRL = speedFR = speedRR = 130; executeMotor(); delay(250); 
-    // Bước 2: Đánh lái xoay ngang dịch chuyển sang phải để tránh
-    digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
-    digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, LOW);
-    speedFL = speedRL = speedFR = speedRR = 140; executeMotor(); delay(300); 
+    speedFL = speedRL = speedFR = speedRR = 130; executeMotor(); delay(300); 
+    
+    // Bước 2: DỊCH CHUYỂN NGANG SANG PHẢI (Chuẩn đặc tính bánh Mecanum)
+    // FL: Tiến, RL: Lùi, FR: Lùi, RR: Tiến
+    digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, HIGH);
+    digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, HIGH);
+    speedFL = speedRL = speedFR = speedRR = 150; executeMotor(); delay(500); 
     stopCar(); delay(100);
   } 
-  else { // Đường trống -> Tiếp tục tiến thẳng tuần tra
+  else { 
     digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
     speedFL = speedRL = speedFR = speedRR = 130; executeMotor();
@@ -268,85 +279,72 @@ void handleObstacleAvoidance() {
 }
 
 // ============================================================================
-// --- 6. HÀM CHẠY TỰ ĐỘNG KHÉP KÍN (TỰ CHẠY OFFLINE KHÔNG CẦN MÁY TÍNH) ---
+// --- 6. HÀM CHẠY TỰ ĐỘNG KHÉP KÍN (KẾT HỢP DÒ LINE + NÉ VẬT CẢN) ---
 // ============================================================================
 void handleAutoMode() {
   // --- BƯỚC 1: QUÉT SIÊU ÂM KHẨN CẤP ĐỂ TÌM VẬT CẢN TRƯỚC ---
   digitalWrite(TRIG_PIN, LOW);   delayMicroseconds(2);
   digitalWrite(TRIG_PIN, HIGH);  delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
-  
   long duration = pulseIn(ECHO_PIN, HIGH, 25000);
   int distance = (duration == 0) ? 999 : (duration * 0.034 / 2);
   
-  // Nếu có vật cản nguy hiểm phía trước (< 25cm), ưu tiên né vật cản trước
   if (distance > 0 && distance < 25) { 
-    stopCar(); 
-    delay(300);
+    stopCar(); delay(300);
     
     // Lùi xe an toàn
     digitalWrite(DIR_FL, HIGH); digitalWrite(DIR_RL, HIGH);
     digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, LOW);
-    speedFL = speedRL = speedFR = speedRR = 130;
-    executeMotor();
-    delay(250); 
+    speedFL = speedRL = speedFR = speedRR = 130; executeMotor(); delay(300); 
     
-    // Dạt ngang sang phải theo đặc tính bánh Mecanum để tránh vật cản
-    digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
-    digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, LOW);
-    speedFL = speedRL = speedFR = speedRR = 140;
-    executeMotor();
-    delay(300); 
+    // Dạt ngang sang phải để tránh vật cản (Đúng chuẩn Mecanum)
+    digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, HIGH);
+    digitalWrite(DIR_FR, LOW);  digitalWrite(DIR_RR, HIGH);
+    speedFL = speedRL = speedFR = speedRR = 150; executeMotor(); delay(600); 
     
-    stopCar();
-    delay(100);
-    return; // Thoát hàm để vòng lặp sau kiểm tra lại đường đi
+    stopCar(); delay(100);
+    return; 
   }
 
-  // --- BƯỚC 2: NẾU ĐƯỜNG TRỐNG, TỰ ĐỘNG ĐỌC CẢM BIẾN HỒNG NGOẠI ĐỂ DÒ LINE ---
-  int L2 = digitalRead(SENSOR_L2);
-  int L1 = digitalRead(SENSOR_L1);
-  int C  = digitalRead(SENSOR_CENTER);
-  int R1 = digitalRead(SENSOR_R1);
+  // --- BƯỚC 2: NẾU ĐƯỜNG TRỐNG, TỰ ĐỘNG DÒ LINE ---
+  int L2 = digitalRead(SENSOR_L2); int L1 = digitalRead(SENSOR_L1);
+  int C  = digitalRead(SENSOR_CENTER); int R1 = digitalRead(SENSOR_R1);
 
   if (L2 == HIGH && L1 == HIGH && C == HIGH && R1 == HIGH) {
-    stopCar(); // Gặp vạch ngang (vạch đích) -> Dừng xe
+    stopCar(); 
     return;
   }
-  else if (L2 == HIGH) { // Lệch trái nặng -> Xoay cua gấp sang trái để bám lại vạch
+  else if (L2 == HIGH) { // Lệch trái nặng -> Cua trái gấp
     digitalWrite(DIR_FL, HIGH); digitalWrite(DIR_RL, HIGH);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
-    speedFL = speedRL = 130;
-    speedFR = speedRR = 130;
+    speedFL = speedRL = speedFR = speedRR = 130;
   }
-  else if (L1 == HIGH) { // Lệch trái nhẹ -> Chỉnh nhẹ sang trái
+  else if (L1 == HIGH) { // Lệch trái nhẹ -> Chỉnh lái nhẹ sang trái
     digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
-    speedFL = speedRL = 80;
-    speedFR = speedRR = 140;
+    speedFL = speedRL = 80; speedFR = speedRR = 140;
   }
-  else if (R1 == HIGH) { // Lệch phải nhẹ -> Chỉnh nhẹ sang phải
+  else if (R1 == HIGH) { // Lệch phải nhẹ -> Chỉnh lái nhẹ sang phải
     digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
-    speedFL = speedRL = 140;
-    speedFR = speedRR = 80;
+    speedFL = speedRL = 140; speedFR = speedRR = 80;
   }
-  else if (C == HIGH) { // Xe đang đi đúng tâm line -> Tiến thẳng đều
+  else if (C == HIGH) { // Đúng tâm -> Tiến đều
     digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
     digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
-    speedFL = speedRL = 130;
-    speedFR = speedRR = 130;
+    speedFL = speedRL = speedFR = speedRR = 130;
   }
   else {
-    // Mất line hoàn toàn -> Dừng xe bảo vệ hệ thống không lao ra ngoài
-    stopCar();
-    return;
+    // Mất line hoàn toàn -> Giảm tốc tìm lại line hoặc dừng an toàn (Tùy cấu hình, ở đây giữ tốc độ thấp để bò tìm vạch)
+    digitalWrite(DIR_FL, LOW);  digitalWrite(DIR_RL, LOW);
+    digitalWrite(DIR_FR, HIGH); digitalWrite(DIR_RR, HIGH);
+    speedFL = speedRL = speedFR = speedRR = 90;
   }
-  executeMotor(); // Thực thi xuất xung PWM ra chân Motor
+  executeMotor(); 
 }
 
 // ============================================================================
-// --- 6. CÁC HÀM CƠ SỞ XUẤT XUNG ĐIỀU KHIỂN PHẦN CỨNG ---
+// --- 7. CÁC HÀM CƠ SỞ XUẤT XUNG ĐIỀU KHIỂN PHẦN CỨNG ---
 // ============================================================================
 void executeMotor() {
   analogWrite(PWM_FL, speedFL);
