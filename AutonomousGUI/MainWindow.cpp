@@ -9,15 +9,15 @@
 #include <QCoreApplication>
 #include <QTimer>
 #include <QFile>
-#include <QDataStream>
-#include <QPixmap>
 
 // ============================================================================
-// KHỐI 1: KHỞI TẠO & GIẢI PHÓNG HỆ THỐNG (VÒNG ĐỜI ỨNG DỤNG)
+// KHỐI 1: KHỞI TẠO & GIẢI PHÓNG HỆ THỐNG
 // ============================================================================
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), expected_image_size(0) {
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     currentMode = 0;
+    hSerial = INVALID_HANDLE_VALUE; 
+    serialTimer = nullptr; // Khởi tạo con trỏ an toàn chống crash
 
     setWindowTitle("HUST Autonomous Control Station Pro");
     resize(1200, 650);
@@ -95,6 +95,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), expected_image_si
     comPortComboBox = new QComboBox(this);
     comPortComboBox->setFixedWidth(120);
     
+    // ⭐ ĐĂNG KÝ EVENT FILTER ĐỂ TỰ ĐỘNG QUẾT LẠI CỔNG KHI CLICK VÀO COMBOBOX
     comPortComboBox->installEventFilter(this);
 
     connectButton = new QPushButton("Kết nối", this);
@@ -113,7 +114,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), expected_image_si
     connLayout->addWidget(disconnectButton);
     leftLayout->addWidget(connectionGroup);
     
-    refreshComPorts(); 
+    refreshComPorts(); // Quét cổng ngay khi bật phần mềm
 
     // Group 2: BẢNG ĐIỀU KHIỂN NÚT BẤM + GA TỔNG
     QGroupBox *controlGroup = new QGroupBox("BẢNG ĐIỀU KHIỂN HỆ THỐNG", this);
@@ -235,18 +236,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), expected_image_si
     connect(btnStop, &QPushButton::clicked, this, &MainWindow::onStopCarClicked);
     connect(btnReset, &QPushButton::clicked, this, &MainWindow::onResetPressed);
 
-    // --- KHỞI TẠO TỐI ƯU: TRUYỀN THÔNG MẠNG MỚI (SOCKETS) & QSERIALPORT --- //
-    serial = new QSerialPort(this);
-    connect(serial, &QSerialPort::readyRead, this, &MainWindow::readSerialData);
-
-    socket = new QTcpSocket(this);
-    socket->connectToHost("127.0.0.1", 65432);
-    connect(socket, &QTcpSocket::readyRead, this, &MainWindow::readSocketData);
-
-    video_socket = new QTcpSocket(this);
-    video_socket->connectToHost("127.0.0.1", 65433);
-    connect(video_socket, &QTcpSocket::readyRead, this, &MainWindow::readVideoData);
-
     // --- KHỞI TẠO TIẾN TRÌNH PYTHON CHẠY NGẦM --- //
     pythonProcess = new QProcess(this);
     connect(pythonProcess, &QProcess::readyReadStandardOutput, this, &MainWindow::readPythonOutput);
@@ -264,11 +253,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), expected_image_si
     QString scriptPath = QCoreApplication::applicationDirPath() + "/hand_tracker.py";
     QString pythonPath = "C:/Users/duc/AppData/Local/Programs/Python/Python312/python.exe";
     pythonProcess->start(pythonPath, QStringList() << scriptPath);
+
+    // Khởi tạo Timer nhận dữ liệu Serial
+    serialTimer = new QTimer(this);
+    connect(serialTimer, &QTimer::timeout, this, &MainWindow::readSerialData);
 }
 
 MainWindow::~MainWindow() {
-    if (serial && serial->isOpen()) {
-        serial->close();
+    if (hSerial != INVALID_HANDLE_VALUE) {
+        CloseHandle(hSerial);
     }
     if (pythonProcess && pythonProcess->state() == QProcess::Running) {
         pythonProcess->terminate();
@@ -276,6 +269,7 @@ MainWindow::~MainWindow() {
     }
 }
 
+// HÀM CHẶN SỰ KIỆN CLICK ĐỂ TỰ ĐỘNG LÀM MỚI CỔNG COM KHI CẮM THIẾT BỊ
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
     if (obj == comPortComboBox && event->type() == QEvent::MouseButtonPress) {
         refreshComPorts(); 
@@ -300,13 +294,6 @@ void MainWindow::refreshComPorts() {
         connectButton->setEnabled(false);
     } else {
         connectButton->setEnabled(true);
-    }
-}
-
-// Hàm bổ trợ gửi chuỗi tin xuống mạch qua QSerialPort (Gọn gàng tối ưu từ code 2)
-void MainWindow::sendCommand(QString cmd) {
-    if (serial && serial->isOpen()) {
-        serial->write(cmd.toUtf8());
     }
 }
 
@@ -343,8 +330,11 @@ void MainWindow::readPythonOutput() {
                 currentModeLabel->setStyleSheet("color: #10b981; font-weight: bold;");
             }
 
-            // Tối ưu hóa: Thay đổi từ Win32 API sang hàm sendCommand của QSerialPort
-            sendCommand(QString::fromUtf8(line) + "\n");
+            if (hSerial != INVALID_HANDLE_VALUE) {
+                DWORD bytesWritten;
+                std::string data = line.toStdString() + "\n";
+                WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+            }
             continue;
         }
 
@@ -409,72 +399,68 @@ void MainWindow::handleGesture(int fingers) {
     if (currentMode != previousMode && currentMode != 4) {
         int value = masterSlider->value();
         QString command = QString("MODE:%1;FL:%2;FR:%3;RL:%4;RR:%5;DIR:W;\n").arg(currentMode).arg(value).arg(value).arg(value).arg(value);
-        sendCommand(command); // Tối ưu: Gửi dữ liệu qua QSerialPort
+        if (hSerial != INVALID_HANDLE_VALUE) {
+            DWORD bytesWritten;
+            std::string data = command.toStdString();
+            WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+        }
     }
 }
 
-// Bất đồng bộ hóa: Hàm xử lý nhận và cắt chuỗi từ phần cứng theo kiến trúc của QSerialPort
 void MainWindow::readSerialData() {
-    while (serial && serial->canReadLine()) {
-        QString validLine = QString(serial->readLine()).trimmed();
-        if (validLine.isEmpty()) continue; 
+    if (hSerial == INVALID_HANDLE_VALUE) return;
+
+    DWORD bytesAvailable;
+    COMSTAT comStat; 
+    
+    if (ClearCommError(hSerial, NULL, &comStat)) {
+        bytesAvailable = comStat.cbInQue; 
         
-        int battery = 100;
-        double distance = -1.0;
-        int lState = 0;
-        bool parseSuccess = false;
+        if (bytesAvailable > 0) {
+            QByteArray buffer;
+            buffer.resize(bytesAvailable);
+            DWORD bytesRead;
+            
+            if (ReadFile(hSerial, buffer.data(), bytesAvailable, &bytesRead, NULL) && bytesRead > 0) {
+                QString rawData = QString::fromLocal8Bit(buffer.constData(), bytesRead);
+                
+                static QString incompleteLine = "";
+                incompleteLine += rawData;
+                
+                while (incompleteLine.contains('\n')) {
+                    int newlinePos = incompleteLine.indexOf('\n');
+                    QString validLine = incompleteLine.left(newlinePos).trimmed();
+                    incompleteLine = incompleteLine.mid(newlinePos + 1);
+                    
+                    if (validLine.isEmpty()) continue; 
+                    
+                    int battery = 100;
+                    double distance = -1.0;
+                    int lState = 0;
+                    bool parseSuccess = false;
 
-        QStringList tokens = validLine.split(';');
-        foreach (QString token, tokens) {
-            token = token.trimmed();
-            if (token.startsWith("BAT:")) {
-                battery = token.mid(4).toInt();
-                parseSuccess = true;
+                    QStringList tokens = validLine.split(';');
+                    foreach (QString token, tokens) {
+                        token = token.trimmed();
+                        if (token.startsWith("BAT:")) {
+                            battery = token.mid(4).toInt();
+                            parseSuccess = true;
+                        }
+                        else if (token.startsWith("DIST:")) {
+                            distance = token.mid(5).toDouble();
+                            parseSuccess = true;
+                        }
+                        else if (token.startsWith("LINE:")) {
+                            lState = token.mid(5).toInt();
+                            parseSuccess = true;
+                        }
+                    }
+                    
+                    if (parseSuccess) {
+                        updateUI(battery, distance, lState);
+                    } 
+                }
             }
-            else if (token.startsWith("DIST:")) {
-                distance = token.mid(5).toDouble();
-                parseSuccess = true;
-            }
-            else if (token.startsWith("LINE:")) {
-                lState = token.mid(5).toInt();
-                parseSuccess = true;
-            }
-        }
-        
-        if (parseSuccess) {
-            updateUI(battery, distance, lState);
-        } 
-    }
-}
-
-// Đọc dữ liệu điều khiển nhận được từ Socket cổng 65432 đẩy sang cổng Serial cứng
-void MainWindow::readSocketData() {
-    QByteArray data = socket->readAll();
-    QString cmd = QString(data).trimmed();
-    if (!cmd.isEmpty()) {
-        sendCommand(cmd + "\n");
-    }
-}
-
-// Giải mã mảng Byte ảnh thô từ Socket cổng 65433 hiển thị lên màn hình (Tối ưu từ Code 2)
-void MainWindow::readVideoData() {
-    video_buffer.append(video_socket->readAll());
-    while (true) {
-        if (expected_image_size == 0) {
-            if (video_buffer.size() < 4) return;
-            QDataStream stream(&video_buffer, QIODevice::ReadOnly);
-            stream >> expected_image_size;
-            video_buffer.remove(0, 4);
-        }
-        if (video_buffer.size() < expected_image_size) return;
-
-        QByteArray imageData = video_buffer.left(expected_image_size);
-        video_buffer.remove(0, expected_image_size);
-        expected_image_size = 0;
-
-        QPixmap pixmap;
-        if (pixmap.loadFromData(imageData, "JPEG")) {
-            cameraDisplay->setPixmap(pixmap.scaled(cameraDisplay->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
     }
 }
@@ -509,65 +495,6 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
 // ============================================================================
 // KHỐI 3: CẬP NHẬT ĐỒ HỌA & HIỂN THỊ GIAO DIỆN (GUI OUTPUTS)
 // ============================================================================
-
-void MainWindow::onConnectClicked() {
-    if (!comPortComboBox || comPortComboBox->count() == 0) {
-        currentModeLabel->setText("LỖI: KHÔNG CÓ CỔNG COM NÀO ĐỂ KẾT NỐI! ❌");
-        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
-        return;
-    }
-
-    QString selectedPort = comPortComboBox->currentText().trimmed();
-    if (selectedPort.isEmpty() || selectedPort == "Không tìm thấy COM" || selectedPort == "No COM Port found") {
-        currentModeLabel->setText("LỖI: CỔNG COM KHÔNG HỢP LỆ! ❌");
-        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
-        return;
-    }
-
-    // Tối ưu hóa lõi: Setup cấu hình truyền thông bằng API chính thức của QSerialPort
-    serial->setPortName(selectedPort);
-    serial->setBaudRate(QSerialPort::Baud9600); 
-    serial->setDataBits(QSerialPort::Data8);
-    serial->setParity(QSerialPort::NoParity);
-    serial->setStopBits(QSerialPort::OneStop);
-    serial->setFlowControl(QSerialPort::NoFlowControl);
-
-    if (serial->open(QIODevice::ReadWrite)) {
-        currentModeLabel->setText("ĐÃ KẾT NỐI THÀNH CÔNG VỚI " + selectedPort + " 🟢");
-        currentModeLabel->setStyleSheet("color: #10b981; font-weight: bold;");
-
-        connectButton->setEnabled(false);     
-        comPortComboBox->setEnabled(false);   
-        disconnectButton->setEnabled(true);   
-
-        connectButton->setStyleSheet("QPushButton { background-color: #10b981; color: white; border-radius: 4px; font-weight: bold; }");
-        disconnectButton->setStyleSheet(""); 
-    } else {
-        currentModeLabel->setText("LỖI: KHÔNG THỂ MỞ CỔNG " + selectedPort + " ❌");
-        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
-    }
-}
-
-void MainWindow::onDisconnectClicked() {
-    if (serial && serial->isOpen()) {
-        onStopCarClicked(); 
-        serial->close();
-    }
-
-    if (currentModeLabel) {
-        currentModeLabel->setText("ĐÃ NGẮT KẾT NỐI CỔNG COM 🛑");
-        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
-    }
-
-    if (connectButton) connectButton->setEnabled(true);      
-    if (comPortComboBox) comPortComboBox->setEnabled(true);    
-    if (disconnectButton) disconnectButton->setEnabled(false);  
-    
-    if (disconnectButton) disconnectButton->setStyleSheet("QPushButton { background-color: #ef4444; color: white; border-radius: 4px; font-weight: bold; }");
-    if (connectButton) connectButton->setStyleSheet(""); 
-
-    refreshComPorts(); 
-}
 
 void MainWindow::updateUI(int battery, double dist, int lineState) {
     batteryBar->setValue(battery);
@@ -655,6 +582,120 @@ void MainWindow::updateCameraFrame(const QImage &frame) {
 // KHỐI 4: ĐIỀU KHIỂN & ĐÓNG GÓI LỆNH ĐẨY XUỐNG CỔNG XUẤT (CONTROL OUTPUTS)
 // ============================================================================
 
+void MainWindow::onConnectClicked() {
+    if (!comPortComboBox || comPortComboBox->count() == 0) {
+        currentModeLabel->setText("LỖI: KHÔNG CÓ CỔNG COM NÀO ĐỂ KẾT NỐI! ❌");
+        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
+        return;
+    }
+
+    QString selectedPort = comPortComboBox->currentText().trimmed();
+    
+    if (selectedPort.isEmpty() || selectedPort == "Không tìm thấy COM" || selectedPort == "No COM Port found") {
+        currentModeLabel->setText("LỖI: CỔNG COM KHÔNG HỢP LỆ! ❌");
+        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
+        return;
+    }
+
+    QString portPath = "\\\\.\\" + selectedPort;
+    std::wstring wPortPath = portPath.toStdWString();
+
+    hSerial = CreateFile(
+        wPortPath.c_str(),
+        GENERIC_READ | GENERIC_WRITE,
+        0,
+        NULL,
+        OPEN_EXISTING,
+        FILE_ATTRIBUTE_NORMAL,
+        NULL
+    );
+
+    if (hSerial == INVALID_HANDLE_VALUE) {
+        currentModeLabel->setText("LỖI: KHÔNG THỂ MỞ CỔNG " + selectedPort + " ❌");
+        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
+        return;
+    }
+
+    DCB dcbSerialParams = {0};
+    dcbSerialParams.DCBlength = sizeof(dcbSerialParams);
+    if (!GetCommState(hSerial, &dcbSerialParams)) {
+        CloseHandle(hSerial);
+        hSerial = INVALID_HANDLE_VALUE;
+        currentModeLabel->setText("LỖI: KHÔNG LẤY ĐƯỢC STATE ❌");
+        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
+        return;
+    }
+    
+    dcbSerialParams.BaudRate = CBR_9600; 
+    dcbSerialParams.ByteSize = 8;
+    dcbSerialParams.StopBits = ONESTOPBIT;
+    dcbSerialParams.Parity = NOPARITY;
+    
+    if (!SetCommState(hSerial, &dcbSerialParams)) {
+        CloseHandle(hSerial);
+        hSerial = INVALID_HANDLE_VALUE;
+        currentModeLabel->setText("LỖI: KHÔNG SET ĐƯỢC STATE ❌");
+        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
+        return;
+    }
+
+    COMMTIMEOUTS timeouts = { 0 };
+    timeouts.ReadIntervalTimeout         = MAXDWORD; 
+    timeouts.ReadTotalTimeoutMultiplier  = 0;
+    timeouts.ReadTotalTimeoutConstant    = 0;        
+    timeouts.WriteTotalTimeoutMultiplier = 0;
+    timeouts.WriteTotalTimeoutConstant   = 10;       
+    SetCommTimeouts(hSerial, &timeouts);
+
+    currentModeLabel->setText("ĐÃ KẾT NỐI THÀNH CÔNG VỚI " + selectedPort + " 🟢");
+    currentModeLabel->setStyleSheet("color: #10b981; font-weight: bold;");
+
+    // Thay đổi trạng thái UI và Đổi màu nút Kết nối thành Xanh lá khi thành công
+    connectButton->setEnabled(false);     
+    comPortComboBox->setEnabled(false);   
+    disconnectButton->setEnabled(true);   
+
+    connectButton->setStyleSheet("QPushButton { background-color: #10b981; color: white; border-radius: 4px; font-weight: bold; }");
+    disconnectButton->setStyleSheet(""); // Reset màu nút ngắt kết nối về mặc định của hệ thống
+
+    if (serialTimer) {
+        serialTimer->start(100);
+    }
+}
+
+void MainWindow::onDisconnectClicked() {
+    if (serialTimer && serialTimer->isActive()) {
+        serialTimer->stop();
+    }
+
+    if (hSerial != NULL && hSerial != INVALID_HANDLE_VALUE) {
+        DWORD errors;
+        COMSTAT status;
+        if (ClearCommError(hSerial, &errors, &status)) {
+            onStopCarClicked(); 
+        }
+        CloseHandle(hSerial);
+        hSerial = INVALID_HANDLE_VALUE; 
+    } else {
+        hSerial = INVALID_HANDLE_VALUE;
+    }
+
+    if (currentModeLabel) {
+        currentModeLabel->setText("ĐÃ NGẮT KẾT NỐI CỔNG COM 🛑");
+        currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
+    }
+
+    if (connectButton) connectButton->setEnabled(true);      
+    if (comPortComboBox) comPortComboBox->setEnabled(true);    
+    if (disconnectButton) disconnectButton->setEnabled(false);  
+    
+    // Đổi màu nút Ngắt kết nối thành Đỏ và reset nút kết nối
+    if (disconnectButton) disconnectButton->setStyleSheet("QPushButton { background-color: #ef4444; color: white; border-radius: 4px; font-weight: bold; }");
+    if (connectButton) connectButton->setStyleSheet(""); 
+
+    refreshComPorts(); 
+}
+
 void MainWindow::onMasterSliderChanged() {
     int value = masterSlider->value(); 
     
@@ -694,10 +735,14 @@ void MainWindow::onMasterSliderChanged() {
     QString command = QString("MODE:%1;FL:%2;FR:%3;RL:%4;RR:%5;DIR:%6;\n")
                         .arg(modeToSend).arg(value).arg(value).arg(value).arg(value).arg(direction);
                       
-    sendCommand(command); // Tối ưu: Đẩy tin bằng QSerialPort chuẩn Qt
+    if (hSerial != INVALID_HANDLE_VALUE) {
+        DWORD bytesWritten;
+        std::string data = command.toStdString();
+        WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+    }
 }
 
-// KHÔI PHỤC HOÀN CHỈNH: Hàm gửi gói dữ liệu của 4 slider vi chỉnh động cơ độc lập
+// KHÔI PHỤC VÀ SỬA LỖI CẮT CHỮ CHO HÀM VI CHỈNH ĐỘNG CƠ ĐỘC LẬP
 void MainWindow::onMotorSliderChanged() {
     int v1 = m1Slider->value(); 
     int v2 = m2Slider->value(); 
@@ -716,49 +761,64 @@ void MainWindow::onMotorSliderChanged() {
     else if (currentModeLabel->text().contains("TRÁI")) direction = "A";
     else if (currentModeLabel->text().contains("PHẢI")) direction = "D";
 
-    int modeToSend = (currentMode == 0) ? 3 : currentMode;
-    QString command = QString("MODE:%1;FL:%2;FR:%3;RL:%4;RR:%5;DIR:%6;\n")
-                        .arg(modeToSend).arg(v1).arg(v2).arg(v3).arg(v4).arg(direction);
-    
-    sendCommand(command);
+    currentMode = 3;
+    currentModeLabel->setText("CHẾ ĐỘ: VI CHỈNH ĐỘNG CƠ (MANUAL)");
+    currentModeLabel->setStyleSheet("color: #38bdf8; font-weight: bold;");
+
+    QString command = QString("MODE:3;FL:%1;FR:%2;RL:%3;RR:%4;DIR:%5;\n")
+                        .arg(v1).arg(v2).arg(v3).arg(v4).arg(direction);
+
+    if (hSerial != INVALID_HANDLE_VALUE) {
+        DWORD bytesWritten;
+        std::string data = command.toStdString();
+        WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+    }
 }
 
-// KHÔI PHỤC HOÀN CHỈNH: Hàm xử lý di chuyển bằng bàn phím (W, A, S, D) hoặc Nút bấm GUI
+// BỔ SUNG ĐẦY ĐỦ CÁC HÀM ĐIỀU KHIỂN HƯỚNG BẰNG PHÍM BẤM HOẶC KEYBOARD
 void MainWindow::processManualMovement(QString direction) {
     currentMode = 3; 
     int value = masterSlider->value();
+    
+    // Nếu chưa vặn ga tổng, cấp tốc độ mặc định an toàn để xe chạy
     if (value == 0) {
-        value = 150; // Tốc độ chạy mặc định khi nhấn phím điều hướng mà chưa vặn ga
+        value = 150; 
+        masterSlider->blockSignals(true);
         masterSlider->setValue(value);
+        masterSlider->blockSignals(false);
+        masterValueLabel->setText(QString::number(value));
+        if (speedDisplay) speedDisplay->display(value);
     }
 
     if (direction == "W") {
-        currentModeLabel->setText("CHẾ ĐỘ [HỦY AI]: ĐIỀU KHIỂN THỦ CÔNG TIẾN TỚI ⬆️");
-        currentModeLabel->setStyleSheet("color: #00ffcc; font-weight: bold;");
+        currentModeLabel->setText("CHẾ ĐỘ: ĐIỀU KHIỂN THỦ CÔNG - TIẾN TỚI ⬆️");
+        currentModeLabel->setStyleSheet("color: #10b981; font-weight: bold;");
     } else if (direction == "S") {
-        currentModeLabel->setText("CHẾ ĐỘ [HỦY AI]: ĐIỀU KHIỂN THỦ CÔNG LÙI LẠI ⬇️");
+        currentModeLabel->setText("CHẾ ĐỘ: ĐIỀU KHIỂN THỦ CÔNG - LÙI LẠI ⬇️");
         currentModeLabel->setStyleSheet("color: #f59e0b; font-weight: bold;");
     } else if (direction == "A") {
-        currentModeLabel->setText("CHẾ ĐỘ [HỦY AI]: ĐIỀU KHIỂN THỦ CÔNG XOAY TRÁI ↩️");
+        currentModeLabel->setText("CHẾ ĐỘ: ĐIỀU KHIỂN THỦ CÔNG - XOAY TRÁI ↩️");
         currentModeLabel->setStyleSheet("color: #38bdf8; font-weight: bold;");
     } else if (direction == "D") {
-        currentModeLabel->setText("CHẾ ĐỘ [HỦY AI]: ĐIỀU KHIỂN THỦ CÔNG XOAY PHẢI ↪️");
+        currentModeLabel->setText("CHẾ ĐỘ: ĐIỀU KHIỂN THỦ CÔNG - XOAY PHẢI ↪️");
         currentModeLabel->setStyleSheet("color: #38bdf8; font-weight: bold;");
     }
 
-    QString command = QString("MODE:3;FL:%2;FR:%3;RL:%4;RR:%5;DIR:%6;\n")
+    QString command = QString("MODE:3;FL:%1;FR:%2;RL:%3;RR:%4;DIR:%5;\n")
                         .arg(value).arg(value).arg(value).arg(value).arg(direction);
-    sendCommand(command);
+
+    if (hSerial != INVALID_HANDLE_VALUE) {
+        DWORD bytesWritten;
+        std::string data = command.toStdString();
+        WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+    }
 }
 
 void MainWindow::onStopCarClicked() {
-    currentMode = 0;
-    currentModeLabel->setText("CHẾ ĐỘ [THỦ CÔNG]: XE ĐÃ DỪNG LẠI (STOPPED 🛑)");
-    currentModeLabel->setStyleSheet("color: #ef4444; font-weight: bold;");
-
     masterSlider->blockSignals(true);
     masterSlider->setValue(0);
     masterSlider->blockSignals(false);
+
     if (speedDisplay) speedDisplay->display(0);
     masterValueLabel->setText("0");
 
@@ -767,15 +827,24 @@ void MainWindow::onStopCarClicked() {
     m1ValueLabel->setText("0"); m2ValueLabel->setText("0");
     m3ValueLabel->setText("0"); m4ValueLabel->setText("0");
 
-    QString command = "MODE:0;FL:0;FR:0;RL:0;RR:0;DIR:S;\n";
-    sendCommand(command);
+    if (hSerial != INVALID_HANDLE_VALUE) {
+        QString command = "MODE:3;FL:0;FR:0;RL:0;RR:0;DIR:STOP;\n";
+        DWORD bytesWritten;
+        std::string data = command.toStdString();
+        WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+    }
 }
 
 void MainWindow::onResetPressed() {
     onStopCarClicked();
-    currentModeLabel->setText("EMERGENCY RESET: TOÀN BỘ HỆ THỐNG ĐÃ KHỞI ĐỘNG LẠI! ⚡");
-    currentModeLabel->setStyleSheet("color: #dc2626; font-weight: bold; font-size: 13px;");
+    currentMode = 0;
+    currentModeLabel->setText("DỪNG KHẨN CẤP: EMERGENCY SYSTEM RESET! 🚨");
+    currentModeLabel->setStyleSheet("color: #dc2626; font-weight: bold;");
     
-    QString command = "RESET;\n";
-    sendCommand(command);
+    if (hSerial != INVALID_HANDLE_VALUE) {
+        QString command = "MODE:0;RESET:1;\n";
+        DWORD bytesWritten;
+        std::string data = command.toStdString();
+        WriteFile(hSerial, data.c_str(), data.length(), &bytesWritten, NULL);
+    }
 }

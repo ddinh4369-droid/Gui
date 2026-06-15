@@ -26,14 +26,6 @@
 	[
 		{
 			"backtrace" : 0,
-			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 0,
-			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 0,
 			"id" : "Qt6::Gui::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -42,15 +34,19 @@
 		},
 		{
 			"backtrace" : 0,
-			"id" : "Qt6::Widgets::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 0,
 			"id" : "Qt6::SerialPort::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,
-			"id" : "Qt6::Network::@6890427a1f51a3e7e1df"
+			"id" : "Qt6::Widgets::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 

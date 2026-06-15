@@ -26,9 +26,7 @@
 			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
 			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
 			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake"
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -38,13 +36,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 22,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
@@ -108,32 +106,6 @@
 				"file" : 4,
 				"line" : 61,
 				"parent" : 13
-			},
-			{
-				"command" : 4,
-				"file" : 3,
-				"line" : 253,
-				"parent" : 4
-			},
-			{
-				"file" : 7,
-				"parent" : 15
-			},
-			{
-				"command" : 3,
-				"file" : 7,
-				"line" : 55,
-				"parent" : 16
-			},
-			{
-				"file" : 6,
-				"parent" : 17
-			},
-			{
-				"command" : 2,
-				"file" : 6,
-				"line" : 61,
-				"parent" : 18
 			}
 		]
 	},
@@ -159,10 +131,6 @@
 		{
 			"backtrace" : 2,
 			"id" : "Qt6::SerialPort::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "Qt6::Network::@6890427a1f51a3e7e1df"
 		}
 	],
 	"compileGroups" : 
@@ -187,10 +155,6 @@
 				{
 					"backtrace" : 2,
 					"define" : "QT_GUI_LIB"
-				},
-				{
-					"backtrace" : 2,
-					"define" : "QT_NETWORK_LIB"
 				},
 				{
 					"backtrace" : 2,
@@ -260,11 +224,6 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "C:/Qt/6.11.1/mingw_64/include/QtSerialPort"
-				},
-				{
-					"backtrace" : 2,
-					"isSystem" : true,
-					"path" : "C:/Qt/6.11.1/mingw_64/include/QtNetwork"
 				}
 			],
 			"language" : "CXX",
@@ -289,11 +248,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "AutonomousGUI_autogen::@6890427a1f51a3e7e1df"
+			"id" : "AutonomousGUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "AutonomousGUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "AutonomousGUI_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "AutonomousGUI::@6890427a1f51a3e7e1df",
@@ -313,11 +272,6 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "C:\\Qt\\6.11.1\\mingw_64\\lib\\libQt6SerialPort.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "C:\\Qt\\6.11.1\\mingw_64\\lib\\libQt6Network.a",
 				"role" : "libraries"
 			},
 			{
@@ -361,11 +315,6 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 19,
-				"fragment" : "-lws2_32",
-				"role" : "libraries"
-			},
-			{
 				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
 				"role" : "libraries"
 			}
@@ -389,10 +338,6 @@
 		{
 			"backtrace" : 2,
 			"id" : "Qt6::SerialPort::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "Qt6::Network::@6890427a1f51a3e7e1df"
 		}
 	],
 	"name" : "AutonomousGUI",
@@ -400,20 +345,20 @@
 	"orderDependencies" : 
 	[
 		{
-			"id" : "Qt6::rcc::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
-		},
-		{
 			"id" : "Qt6::uic::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "AutonomousGUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,
 			"id" : "AutonomousGUI_autogen::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "AutonomousGUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"id" : "Qt6::rcc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 

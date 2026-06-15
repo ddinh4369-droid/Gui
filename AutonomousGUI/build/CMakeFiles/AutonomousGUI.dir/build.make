@@ -163,7 +163,6 @@ AutonomousGUI.exe: CMakeFiles/AutonomousGUI.dir/AutonomousGUI_autogen/EWIEGA46WW
 AutonomousGUI.exe: CMakeFiles/AutonomousGUI.dir/build.make
 AutonomousGUI.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Widgets.a
 AutonomousGUI.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6SerialPort.a
-AutonomousGUI.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Network.a
 AutonomousGUI.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Gui.a
 AutonomousGUI.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Core.a
 AutonomousGUI.exe: CMakeFiles/AutonomousGUI.dir/linkLibs.rsp

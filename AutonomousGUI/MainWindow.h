@@ -11,10 +11,10 @@
 #include <QProcess>
 #include <QTimer>
 #include <QList>
-#include <QtSerialPort/QSerialPort>      // Sử dụng thư viện Serial chính thức của Qt
 #include <QtSerialPort/QSerialPortInfo>
-#include <QTcpSocket>                   // Thêm Socket để kết nối Python
-#include <QByteArray>
+
+// Nhúng Win32 API thuần để giao tiếp Serial cứng
+#include <windows.h>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -24,67 +24,78 @@ public:
     ~MainWindow();
 
 protected:
+    // ⭐ Bắt buộc phải có để xử lý sự kiện click vào ComboBox tự động làm mới cổng COM
     bool eventFilter(QObject *obj, QEvent *event) override;
+    
+    // Xử lý sự kiện nhấn thả phím từ bàn phím (W, A, S, D)
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
 
 private slots:
+    // Các Slot xử lý cấu hình kết nối
     void onConnectClicked();
     void onDisconnectClicked();
     void refreshComPorts();
 
-    // Các slots tối ưu hóa bằng Signal/Slot bất đồng bộ
-    void readSerialData();
-    void readSocketData();
-    void readVideoData();
+    // Các Slot xử lý luồng nhận dữ liệu
     void readPythonOutput();
+    void readSerialData();
 
+    // Các Slot điều khiển tốc độ và động cơ
     void onMasterSliderChanged();
     void onMotorSliderChanged();
     void onStopCarClicked();
     void onResetPressed();
 
 private:
+    // Hàm bổ trợ nội bộ để phân tích cử chỉ tay và điều hướng xe
     void handleGesture(int fingers);
     void updateUI(int battery, double dist, int lineState);
     void updateCameraFrame(const QImage &frame);
     void processManualMovement(QString direction);
-    void sendCommand(QString cmd); // Hàm bổ trợ gửi dữ liệu qua QSerialPort
 
-    // --- BIẾN ĐIỀU KHIỂN HỆ THỐNG VÀ PHẦN CỨNG (ĐÃ TỐI ƯU) ---
-    QSerialPort *serial;        // Thay thế HANDLE bằng QSerialPort chuẩn Qt
-    QTcpSocket *socket;         // Cổng nhận lệnh điều khiển từ Python (Port 65432)
-    QTcpSocket *video_socket;   // Cổng nhận Livestream Video từ Python (Port 65433)
-    QByteArray video_buffer;    // Bộ đệm gom dữ liệu ảnh JPEG
-    int expected_image_size;    // Biến lưu kích thước ảnh đang đợi
+    // --- BIẾN ĐIỀU KHIỂN HỆ THỐNG VÀ PHẦN CỨNG ---
+    HANDLE hSerial;             // Handle quản lý cổng COM theo cấu trúc Win32 API
+    int currentMode;            // Chế độ hoạt động hiện tại (0: Stop, 1: Line, 2: Tránh vật cản, 3: Manual, 5: AI)
+    QProcess *pythonProcess;    // Tiến trình chạy ngầm script Mediapipe (hand_tracker.py)
+    QTimer *serialTimer;        // Timer quét chu kỳ đọc dữ liệu từ mạch
 
-    int currentMode;            
-    QProcess *pythonProcess;    
-
-    // --- CÁC THÀNH PHẦN GIAO DIỆN (UI GIỮ NGUYÊN) ---
+    // --- CÁC THÀNH PHẦN GIAO DIỆN (UI COMPONENTS) ---
+    // Khối Telemetry
     QLCDNumber *speedDisplay;
     QProgressBar *batteryBar;
     QLabel *currentModeLabel;
     QLabel *lineStatus;
     QLabel *obstacleWarning;
 
+    // Khối Kết nối
     QComboBox *comPortComboBox;
     QPushButton *connectButton;
     QPushButton *disconnectButton;
 
-    QPushButton *btnUp; QPushButton *btnDown;
-    QPushButton *btnLeft; QPushButton *btnRight;
-    QPushButton *btnStop; QPushButton *btnReset;
+    // Khối điều hướng hướng đi
+    QPushButton *btnUp;
+    QPushButton *btnDown;
+    QPushButton *btnLeft;
+    QPushButton *btnRight;
+    QPushButton *btnStop;
+    QPushButton *btnReset;
 
+    // Khối Slider Ga tổng và Vi chỉnh 4 động cơ
     QSlider *masterSlider;
     QLabel *masterValueLabel;
 
-    QSlider *m1Slider; QSlider *m2Slider;
-    QSlider *m3Slider; QSlider *m4Slider;
+    QSlider *m1Slider; // Trước Trái
+    QSlider *m2Slider; // Trước Phải
+    QSlider *m3Slider; // Sau Trái
+    QSlider *m4Slider; // Sau Phải
 
-    QLabel *m1ValueLabel; QLabel *m2ValueLabel;
-    QLabel *m3ValueLabel; QLabel *m4ValueLabel;
+    QLabel *m1ValueLabel;
+    QLabel *m2ValueLabel;
+    QLabel *m3ValueLabel;
+    QLabel *m4ValueLabel;
 
+    // Khối hiển thị Camera stream từ AI
     QLabel *cameraDisplay;
 };
 

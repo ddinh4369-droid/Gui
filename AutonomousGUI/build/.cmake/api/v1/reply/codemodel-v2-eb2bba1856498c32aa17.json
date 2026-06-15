@@ -55,13 +55,6 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "Qt6::Network::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qt6__Network-Debug-f74bcf6c8dc7d5e76dfa.json",
-					"name" : "Qt6::Network",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
 					"id" : "Qt6::Platform::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Qt6__Platform-Debug-fa3453f7d6611aee70db.json",
 					"name" : "Qt6::Platform",
@@ -146,23 +139,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "Qt6::QNLMNIPlugin::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qt6__QNLMNIPlugin-Debug-358a97493ce24e660281.json",
-					"name" : "Qt6::QNLMNIPlugin",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
 					"id" : "Qt6::QOffscreenIntegrationPlugin::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Qt6__QOffscreenIntegrationPlugin-Debug-186523be1ef99b6526bf.json",
 					"name" : "Qt6::QOffscreenIntegrationPlugin",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "Qt6::QSchannelBackendPlugin::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qt6__QSchannelBackendPlugin-Debug-0e8429bda4ae27b89e88.json",
-					"name" : "Qt6::QSchannelBackendPlugin",
 					"projectIndex" : 0
 				},
 				{
@@ -177,20 +156,6 @@
 					"id" : "Qt6::QSvgPlugin::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Qt6__QSvgPlugin-Debug-a6df32ff02e71fe0947f.json",
 					"name" : "Qt6::QSvgPlugin",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "Qt6::QTlsBackendCertOnlyPlugin::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qt6__QTlsBackendCertOnlyPlugin-Debug-4924a242c15a7d36ab3a.json",
-					"name" : "Qt6::QTlsBackendCertOnlyPlugin",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "Qt6::QTlsBackendOpenSSLPlugin::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qt6__QTlsBackendOpenSSLPlugin-Debug-fd81655997e4bb7316e2.json",
-					"name" : "Qt6::QTlsBackendOpenSSLPlugin",
 					"projectIndex" : 0
 				},
 				{
@@ -516,12 +481,7 @@
 						55,
 						56,
 						57,
-						58,
-						59,
-						60,
-						61,
-						62,
-						63
+						58
 					],
 					"build" : ".",
 					"jsonFile" : "directory-.-Debug-f040eec181a89de70dbe.json",
@@ -603,12 +563,7 @@
 						55,
 						56,
 						57,
-						58,
-						59,
-						60,
-						61,
-						62,
-						63
+						58
 					],
 					"directoryIndexes" : 
 					[
@@ -628,21 +583,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "AutonomousGUI::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AutonomousGUI-Debug-c5f79dac1fed75f4b49a.json",
+					"jsonFile" : "target-AutonomousGUI-Debug-b4df3980d4868f4ee7ea.json",
 					"name" : "AutonomousGUI",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "AutonomousGUI_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AutonomousGUI_autogen-Debug-72d919eca49005af904e.json",
+					"jsonFile" : "target-AutonomousGUI_autogen-Debug-2e5ff78e5368ca232198.json",
 					"name" : "AutonomousGUI_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "AutonomousGUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AutonomousGUI_autogen_timestamp_deps-Debug-7a38af2bfcac8b981a67.json",
+					"jsonFile" : "target-AutonomousGUI_autogen_timestamp_deps-Debug-3c42971bf243483f81a0.json",
 					"name" : "AutonomousGUI_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
