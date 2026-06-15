@@ -66,7 +66,7 @@ void setup() {
 // ============================================================================
 void loop() {
   // ------------------------------------------------------------------------
-  // LUỒNG 1: NHẬN LỆNH ĐIỀU KHIỂN TỪ GUI C++ (ĐÃ SỬA ĐỔI BÓC TÁCH CHUẨN)
+  // LUỒNG 1: NHẬN LỆNH ĐIỀU KHIỂN TỪ GUI C++
   // ------------------------------------------------------------------------
   if (Serial.available() > 0) {
     String cmd = Serial.readStringUntil('\n');
@@ -212,7 +212,7 @@ void loop() {
 }
 
 // ============================================================================
-// --- HÀM TỰ ĐỘNG: DÒ LINE BẰNG HỒNG NGOẠI (MODE 1) ---
+// --- 6.HÀM TỰ ĐỘNG: DÒ LINE BẰNG HỒNG NGOẠI (MODE 1) ---
 // ============================================================================
 void handleLineFollowing() {
   int L2 = digitalRead(SENSOR_L2); int L1 = digitalRead(SENSOR_L1);
@@ -248,7 +248,7 @@ void handleLineFollowing() {
 }
 
 // ============================================================================
-// --- HÀM TỰ ĐỘNG: NÉ VẬT CẢN BẰNG SIÊU ÂM (MODE 2) ---
+// --- 7.HÀM TỰ ĐỘNG: NÉ VẬT CẢN BẰNG SIÊU ÂM (MODE 2) ---
 // ============================================================================
 void handleObstacleAvoidance() {
   digitalWrite(TRIG_PIN, LOW);   delayMicroseconds(2);
@@ -279,7 +279,7 @@ void handleObstacleAvoidance() {
 }
 
 // ============================================================================
-// --- 6. HÀM CHẠY TỰ ĐỘNG KHÉP KÍN (KẾT HỢP DÒ LINE + NÉ VẬT CẢN) ---
+// --- 7. HÀM CHẠY TỰ ĐỘNG KHÉP KÍN (KẾT HỢP DÒ LINE + NÉ VẬT CẢN) ---
 // ============================================================================
 void handleAutoMode() {
   // --- BƯỚC 1: QUÉT SIÊU ÂM KHẨN CẤP ĐỂ TÌM VẬT CẢN TRƯỚC ---
@@ -344,7 +344,7 @@ void handleAutoMode() {
 }
 
 // ============================================================================
-// --- 7. CÁC HÀM CƠ SỞ XUẤT XUNG ĐIỀU KHIỂN PHẦN CỨNG ---
+// --- 8. CÁC HÀM CƠ SỞ XUẤT XUNG ĐIỀU KHIỂN PHẦN CỨNG ---
 // ============================================================================
 void executeMotor() {
   analogWrite(PWM_FL, speedFL);

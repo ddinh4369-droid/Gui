@@ -2,20 +2,19 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QComboBox>
 #include <QPushButton>
-#include <QSlider>
-#include <QLabel>
 #include <QLCDNumber>
 #include <QProgressBar>
+#include <QLabel>
+#include <QSlider>
 #include <QProcess>
-#include <QKeyEvent>
-#include <QImage>
 #include <QTimer>
-
-// Bắt buộc phải thêm thư viện hệ thống Windows để nhận diện kiểu dữ liệu HANDLE
-#ifdef _WIN32
-#include <windows.h>
-#endif
+#include <QList>
+#include <QtSerialPort/QSerialPort>      // Sử dụng thư viện Serial chính thức của Qt
+#include <QtSerialPort/QSerialPortInfo>
+#include <QTcpSocket>                   // Thêm Socket để kết nối Python
+#include <QByteArray>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -25,74 +24,68 @@ public:
     ~MainWindow();
 
 protected:
+    bool eventFilter(QObject *obj, QEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
-    
+
 private slots:
+    void onConnectClicked();
+    void onDisconnectClicked();
+    void refreshComPorts();
+
+    // Các slots tối ưu hóa bằng Signal/Slot bất đồng bộ
+    void readSerialData();
+    void readSocketData();
+    void readVideoData();
+    void readPythonOutput();
+
     void onMasterSliderChanged();
     void onMotorSliderChanged();
-    
-    void onMoveUpClicked();
-    void onMoveDownClicked();
-    void onMoveLeftClicked();
-    void onMoveRightClicked();
     void onStopCarClicked();
     void onResetPressed();
-    
-    void updateCameraFrame(const QImage &frame);
-    void handleGesture(int fingers);
-    
-    void readPythonOutput(); // Slot để đọc dữ liệu từ tiến trình Python gửi lên
-    void readSerialData();   // Slot để đọc dữ liệu cảm biến từ Arduino qua Win32 API
 
 private:
-    void processManualMovement(QString direction);
-    void sendControlPacket();
+    void handleGesture(int fingers);
     void updateUI(int battery, double dist, int lineState);
+    void updateCameraFrame(const QImage &frame);
+    void processManualMovement(QString direction);
+    void sendCommand(QString cmd); // Hàm bổ trợ gửi dữ liệu qua QSerialPort
 
-    int currentMode;
+    // --- BIẾN ĐIỀU KHIỂN HỆ THỐNG VÀ PHẦN CỨNG (ĐÃ TỐI ƯU) ---
+    QSerialPort *serial;        // Thay thế HANDLE bằng QSerialPort chuẩn Qt
+    QTcpSocket *socket;         // Cổng nhận lệnh điều khiển từ Python (Port 65432)
+    QTcpSocket *video_socket;   // Cổng nhận Livestream Video từ Python (Port 65433)
+    QByteArray video_buffer;    // Bộ đệm gom dữ liệu ảnh JPEG
+    int expected_image_size;    // Biến lưu kích thước ảnh đang đợi
 
-    // Thành phần giám sát Telemetry
+    int currentMode;            
+    QProcess *pythonProcess;    
+
+    // --- CÁC THÀNH PHẦN GIAO DIỆN (UI GIỮ NGUYÊN) ---
     QLCDNumber *speedDisplay;
     QProgressBar *batteryBar;
     QLabel *currentModeLabel;
     QLabel *lineStatus;
     QLabel *obstacleWarning;
-    QLabel *cameraDisplay;
 
-    // Thanh ga tổng
+    QComboBox *comPortComboBox;
+    QPushButton *connectButton;
+    QPushButton *disconnectButton;
+
+    QPushButton *btnUp; QPushButton *btnDown;
+    QPushButton *btnLeft; QPushButton *btnRight;
+    QPushButton *btnStop; QPushButton *btnReset;
+
     QSlider *masterSlider;
     QLabel *masterValueLabel;
-    
-    // Hệ thống nút điều hướng thủ công
-    QPushButton *btnUp;
-    QPushButton *btnDown;
-    QPushButton *btnLeft;
-    QPushButton *btnRight;
-    QPushButton *btnStop;
-    QPushButton *btnReset;
 
-    // Hệ thống Slider điều chỉnh độc lập 4 động cơ
-    QSlider *m1Slider;
-    QSlider *m2Slider;
-    QSlider *m3Slider;
-    QSlider *m4Slider;
+    QSlider *m1Slider; QSlider *m2Slider;
+    QSlider *m3Slider; QSlider *m4Slider;
 
-    QLabel *m1ValueLabel;
-    QLabel *m2ValueLabel;
-    QLabel *m3ValueLabel;
-    QLabel *m4ValueLabel;
+    QLabel *m1ValueLabel; QLabel *m2ValueLabel;
+    QLabel *m3ValueLabel; QLabel *m4ValueLabel;
 
-    // Quản lý tiến trình chạy nền và định thời
-    QProcess *pythonProcess;
-    QTimer *serialTimer;
-
-    // --- KẾT NỐI PHẦN CỨNG QUA WIN32 API ---
-#ifdef _WIN32
-    HANDLE hSerial; // Biến lưu trữ trạng thái kết nối cổng COM tới Arduino
-#else
-    void* hSerial;  // Giữ cấu trúc nếu biên dịch trên nền tảng khác
-#endif
+    QLabel *cameraDisplay;
 };
 
 #endif // MAINWINDOW_H

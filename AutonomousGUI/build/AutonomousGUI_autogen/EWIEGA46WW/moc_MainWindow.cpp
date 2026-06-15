@@ -40,53 +40,43 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "MainWindow",
-        "onMasterSliderChanged",
+        "onConnectClicked",
         "",
-        "onMotorSliderChanged",
-        "onMoveUpClicked",
-        "onMoveDownClicked",
-        "onMoveLeftClicked",
-        "onMoveRightClicked",
-        "onStopCarClicked",
-        "onResetPressed",
-        "updateCameraFrame",
-        "QImage",
-        "frame",
-        "handleGesture",
-        "fingers",
+        "onDisconnectClicked",
+        "refreshComPorts",
+        "readSerialData",
+        "readSocketData",
+        "readVideoData",
         "readPythonOutput",
-        "readSerialData"
+        "onMasterSliderChanged",
+        "onMotorSliderChanged",
+        "onStopCarClicked",
+        "onResetPressed"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'onMasterSliderChanged'
+        // Slot 'onConnectClicked'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onMotorSliderChanged'
+        // Slot 'onDisconnectClicked'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onMoveUpClicked'
+        // Slot 'refreshComPorts'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onMoveDownClicked'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onMoveLeftClicked'
-        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onMoveRightClicked'
-        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onStopCarClicked'
-        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onResetPressed'
-        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'updateCameraFrame'
-        QtMocHelpers::SlotData<void(const QImage &)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 11, 12 },
-        }}),
-        // Slot 'handleGesture'
-        QtMocHelpers::SlotData<void(int)>(13, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 14 },
-        }}),
-        // Slot 'readPythonOutput'
-        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'readSerialData'
-        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'readSocketData'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'readVideoData'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'readPythonOutput'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onMasterSliderChanged'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onMotorSliderChanged'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onStopCarClicked'
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onResetPressed'
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -110,21 +100,21 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<MainWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->onMasterSliderChanged(); break;
-        case 1: _t->onMotorSliderChanged(); break;
-        case 2: _t->onMoveUpClicked(); break;
-        case 3: _t->onMoveDownClicked(); break;
-        case 4: _t->onMoveLeftClicked(); break;
-        case 5: _t->onMoveRightClicked(); break;
-        case 6: _t->onStopCarClicked(); break;
-        case 7: _t->onResetPressed(); break;
-        case 8: _t->updateCameraFrame((*reinterpret_cast<std::add_pointer_t<QImage>>(_a[1]))); break;
-        case 9: _t->handleGesture((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 10: _t->readPythonOutput(); break;
-        case 11: _t->readSerialData(); break;
+        case 0: _t->onConnectClicked(); break;
+        case 1: _t->onDisconnectClicked(); break;
+        case 2: _t->refreshComPorts(); break;
+        case 3: _t->readSerialData(); break;
+        case 4: _t->readSocketData(); break;
+        case 5: _t->readVideoData(); break;
+        case 6: _t->readPythonOutput(); break;
+        case 7: _t->onMasterSliderChanged(); break;
+        case 8: _t->onMotorSliderChanged(); break;
+        case 9: _t->onStopCarClicked(); break;
+        case 10: _t->onResetPressed(); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -146,14 +136,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 11;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 12;
+        _id -= 11;
     }
     return _id;
 }

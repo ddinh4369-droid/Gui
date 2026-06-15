@@ -9,8 +9,14 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-# 2. TÌM THƯ VIỆN QT6 (Chỉ giữ lại các module cốt lõi cho giao diện)
-find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
+# 2. TÌM THƯ VIỆN QT6 (Đã thêm module Network để sửa lỗi kết nối Socket)
+find_package(Qt6 REQUIRED COMPONENTS 
+    Core 
+    Gui 
+    Widgets 
+    SerialPort
+    Network
+)
 
 # 3. KHAI BÁO CÁC FILE NGUỒN CỦA DỰ ÁN
 add_executable(AutonomousGUI
@@ -25,4 +31,6 @@ target_link_libraries(AutonomousGUI PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Widgets
+    Qt6::SerialPort
+    Qt6::Network
 )

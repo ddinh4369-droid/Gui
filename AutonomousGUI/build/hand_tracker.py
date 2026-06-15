@@ -30,7 +30,7 @@ circle_buffer = collections.deque(maxlen=15)
 # --- KHỞI TẠO CẤU HÌNH FONT UNICODE (CHỐNG LỖI Ô VUÔNG) ---
 # Thử tải Font Arial (mặc định Windows). Nếu không có, Pillow sẽ tự dùng font mặc định (nhưng có thể lỗi mũi tên)
 try:
-    # Đức có thể thay 'arial.ttf' bằng đường dẫn đến font VNI hoặc font khác nếu muốn tiếng Việt đẹp hơn
+    # Có thể thay 'arial.ttf' bằng đường dẫn đến font VNI hoặc font khác nếu muốn tiếng Việt đẹp hơn
     FONT_UNICODE = ImageFont.truetype("arial.ttf", 18) 
     FONT_UNICODE_BIG = ImageFont.truetype("arial.ttf", 24)
 except IOError:
@@ -45,7 +45,7 @@ def draw_unicode_text(img, text, position, color=(255, 255, 0), font=FONT_UNICOD
     return np.array(img_pil) # Chuyển ngược về ảnh OpenCV
 
 def detect_circle(points):
-    """ Giữ nguyên thuật toán quét vòng tròn cũ của Đức """
+    """ Giữ nguyên thuật toán quét vòng tròn cũ """
     if len(points) < 10: return False
     xs = [p[0] for p in points]
     ys = [p[1] for p in points]
@@ -58,7 +58,7 @@ def detect_circle(points):
     return (std_radius / mean_radius) < 0.35
 
 def process_ai_lane_detection(img):
-    """ Giữ nguyên bộ lọc Canny + Hough Lines cũ của Đức """
+    """ Giữ nguyên bộ lọc Canny + Hough Lines cũ """
     height, width = img.shape[:2]
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (5, 5), 0)

@@ -83,8 +83,8 @@ clean: CMakeFiles/AutonomousGUI_autogen.dir/clean
 # Target rules for target CMakeFiles/AutonomousGUI.dir
 
 # All Build rule for target.
-CMakeFiles/AutonomousGUI.dir/all: CMakeFiles/AutonomousGUI_autogen_timestamp_deps.dir/all
 CMakeFiles/AutonomousGUI.dir/all: CMakeFiles/AutonomousGUI_autogen.dir/all
+CMakeFiles/AutonomousGUI.dir/all: CMakeFiles/AutonomousGUI_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AutonomousGUI.dir\build.make CMakeFiles/AutonomousGUI.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AutonomousGUI.dir\build.make CMakeFiles/AutonomousGUI.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\duc\projects\BTL\AutonomousGUI\build\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target AutonomousGUI"
