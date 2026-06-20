@@ -50,6 +50,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
       - "/REGISTRY-NOTFOUND/bin/"
       - "c:/MinGW/bin/"
       - "/MinGW/bin/"
@@ -89,6 +90,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -140,6 +142,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "message-v1"
     backtrace:
@@ -202,6 +205,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/ar.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/ar.exe"
@@ -231,6 +235,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -271,6 +276,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/ranlib.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/ranlib.exe"
@@ -300,6 +306,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -340,6 +347,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/strip.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/strip.exe"
@@ -369,6 +377,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -409,6 +418,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/ld.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/ld.exe"
@@ -438,6 +448,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -478,6 +489,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/nm.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/nm.exe"
@@ -507,6 +519,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -547,6 +560,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/objdump.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/objdump.exe"
@@ -576,6 +590,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -616,6 +631,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/objcopy.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/objcopy.exe"
@@ -645,6 +661,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -685,6 +702,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/readelf.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/readelf.exe"
@@ -714,6 +732,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -754,6 +773,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/dlltool.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/dlltool.exe"
@@ -783,6 +803,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -823,6 +844,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/addr2line.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/addr2line.exe"
@@ -852,6 +874,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -892,6 +915,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/tapi.com"
       - "C:/Qt/Tools/mingw1310_64/bin/tapi.exe"
@@ -953,6 +977,9 @@ events:
       - "C:/Qt/6.11.1/mingw_64/bin/tapi.com"
       - "C:/Qt/6.11.1/mingw_64/bin/tapi.exe"
       - "C:/Qt/6.11.1/mingw_64/bin/tapi"
+      - "C:/Users/duc/.dotnet/tools/tapi.com"
+      - "C:/Users/duc/.dotnet/tools/tapi.exe"
+      - "C:/Users/duc/.dotnet/tools/tapi"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
@@ -980,6 +1007,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -1023,6 +1051,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar-13.1.com"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar-13.1.exe"
@@ -1084,6 +1113,9 @@ events:
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar-13.1.com"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar-13.1.exe"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar-13.1"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar-13.1.com"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar-13.1.exe"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar-13.1"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar-13.com"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar-13.exe"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar-13"
@@ -1144,6 +1176,9 @@ events:
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar-13.com"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar-13.exe"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar-13"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar-13.com"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar-13.exe"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar-13"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar13.com"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar13.exe"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar13"
@@ -1204,6 +1239,9 @@ events:
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar13.com"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar13.exe"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ar13"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar13.com"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar13.exe"
+      - "C:/Users/duc/.dotnet/tools/gcc-ar13"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ar.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/gcc-ar.exe"
     search_context:
@@ -1232,6 +1270,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -1275,6 +1314,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
     searched_directories:
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib-13.1.com"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib-13.1.exe"
@@ -1336,6 +1376,9 @@ events:
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib-13.1.com"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib-13.1.exe"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib-13.1"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib-13.1.com"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib-13.1.exe"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib-13.1"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib-13.com"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib-13.exe"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib-13"
@@ -1396,6 +1439,9 @@ events:
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib-13.com"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib-13.exe"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib-13"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib-13.com"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib-13.exe"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib-13"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib13.com"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib13.exe"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib13"
@@ -1456,6 +1502,9 @@ events:
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib13.com"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib13.exe"
       - "C:/Qt/6.11.1/mingw_64/bin/gcc-ranlib13"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib13.com"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib13.exe"
+      - "C:/Users/duc/.dotnet/tools/gcc-ranlib13"
       - "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib.com"
     found: "C:/Qt/Tools/mingw1310_64/bin/gcc-ranlib.exe"
     search_context:
@@ -1484,6 +1533,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
   -
     kind: "find-v1"
     backtrace:
@@ -1530,6 +1580,7 @@ events:
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -1580,6 +1631,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -1595,8 +1647,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-hnuelg"
-      binary: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-hnuelg"
+      source: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-jnp3jq"
+      binary: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-jnp3jq"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1607,13 +1659,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-hnuelg'
+        Change Dir: 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-jnp3jq'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe -f Makefile cmTC_4361e/fast
-        C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_4361e.dir\\build.make CMakeFiles/cmTC_4361e.dir/build
-        mingw32-make.exe[1]: Entering directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-hnuelg'
-        Building CXX object CMakeFiles/cmTC_4361e.dir/CMakeCXXCompilerABI.cpp.obj
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe -f Makefile cmTC_ecd8a/fast
+        C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ecd8a.dir\\build.make CMakeFiles/cmTC_ecd8a.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-jnp3jq'
+        Building CXX object CMakeFiles/cmTC_ecd8a.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe
         Target: x86_64-w64-mingw32
@@ -1621,8 +1673,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 13.1.0 (x86_64-posix-seh-rev1, Built by MinGW-Builds project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_4361e.dir\\'
-         C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_4361e.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=core2 -march=nocona -version -o C:\\Users\\duc\\AppData\\Local\\Temp\\ccjfP3gt.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_ecd8a.dir\\'
+         C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_ecd8a.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=core2 -march=nocona -version -o C:\\Users\\duc\\AppData\\Local\\Temp\\ccQRYhyy.s
         GNU C++17 (x86_64-posix-seh-rev1, Built by MinGW-Builds project) version 13.1.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 13.1.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.25-GMP
         
@@ -1645,14 +1697,14 @@ events:
          C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: b3d236387f35294e2a73c51628039e05
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_4361e.dir\\'
-         C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\duc\\AppData\\Local\\Temp\\ccjfP3gt.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_ecd8a.dir\\'
+         C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\duc\\AppData\\Local\\Temp\\ccQRYhyy.s
         GNU assembler version 2.39 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.39
         COMPILER_PATH=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_4361e.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_4361e.dir\\link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_ecd8a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ecd8a.dir\\link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe
         COLLECT_LTO_WRAPPER=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe
@@ -1663,16 +1715,16 @@ events:
         gcc version 13.1.0 (x86_64-posix-seh-rev1, Built by MinGW-Builds project) 
         COMPILER_PATH=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4361e.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_4361e.'
-         C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\duc\\AppData\\Local\\Temp\\ccZuW5PR.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64 -m i386pep -Bdynamic -o cmTC_4361e.exe C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_4361e.dir/objects.a --no-whole-archive --out-implib libcmTC_4361e.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ecd8a.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_ecd8a.'
+         C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\duc\\AppData\\Local\\Temp\\ccKKwjhP.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64 -m i386pep -Bdynamic -o cmTC_ecd8a.exe C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_ecd8a.dir/objects.a --no-whole-archive --out-implib libcmTC_ecd8a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
         collect2 version 13.1.0
-        C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\duc\\AppData\\Local\\Temp\\ccZuW5PR.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64 -m i386pep -Bdynamic -o cmTC_4361e.exe C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_4361e.dir/objects.a --no-whole-archive --out-implib libcmTC_4361e.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\duc\\AppData\\Local\\Temp\\ccKKwjhP.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64 -m i386pep -Bdynamic -o cmTC_ecd8a.exe C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_ecd8a.dir/objects.a --no-whole-archive --out-implib libcmTC_ecd8a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
         GNU ld (GNU Binutils) 2.39
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4361e.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_4361e.'
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_4361e.dir/objects.a
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\ar.exe qc CMakeFiles\\cmTC_4361e.dir/objects.a @CMakeFiles\\cmTC_4361e.dir\\objects1.rsp
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_4361e.dir/objects.a -Wl,--no-whole-archive -o cmTC_4361e.exe -Wl,--out-implib,libcmTC_4361e.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make.exe[1]: Leaving directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-hnuelg'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ecd8a.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_ecd8a.'
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_ecd8a.dir/objects.a
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\ar.exe qc CMakeFiles\\cmTC_ecd8a.dir/objects.a @CMakeFiles\\cmTC_ecd8a.dir\\objects1.rsp
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_ecd8a.dir/objects.a -Wl,--no-whole-archive -o cmTC_ecd8a.exe -Wl,--out-implib,libcmTC_ecd8a.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-jnp3jq'
         
       exitCode: 0
   -
@@ -1711,13 +1763,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-hnuelg']
+        ignore line: [Change Dir: 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-jnp3jq']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe -f Makefile cmTC_4361e/fast]
-        ignore line: [C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_4361e.dir\\build.make CMakeFiles/cmTC_4361e.dir/build]
-        ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-hnuelg']
-        ignore line: [Building CXX object CMakeFiles/cmTC_4361e.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe -f Makefile cmTC_ecd8a/fast]
+        ignore line: [C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ecd8a.dir\\build.make CMakeFiles/cmTC_ecd8a.dir/build]
+        ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-jnp3jq']
+        ignore line: [Building CXX object CMakeFiles/cmTC_ecd8a.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -1725,8 +1777,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 13.1.0 (x86_64-posix-seh-rev1  Built by MinGW-Builds project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_4361e.dir\\']
-        ignore line: [ C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_4361e.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=core2 -march=nocona -version -o C:\\Users\\duc\\AppData\\Local\\Temp\\ccjfP3gt.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_ecd8a.dir\\']
+        ignore line: [ C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_ecd8a.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=core2 -march=nocona -version -o C:\\Users\\duc\\AppData\\Local\\Temp\\ccQRYhyy.s]
         ignore line: [GNU C++17 (x86_64-posix-seh-rev1  Built by MinGW-Builds project) version 13.1.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 13.1.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.25-GMP]
         ignore line: []
@@ -1749,8 +1801,8 @@ events:
         ignore line: [ C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: b3d236387f35294e2a73c51628039e05]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_4361e.dir\\']
-        ignore line: [ C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\duc\\AppData\\Local\\Temp\\ccjfP3gt.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_ecd8a.dir\\']
+        ignore line: [ C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\duc\\AppData\\Local\\Temp\\ccQRYhyy.s]
         ignore line: [GNU assembler version 2.39 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.39]
         ignore line: [COMPILER_PATH=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/]
         ignore line: [C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/]
@@ -1761,9 +1813,9 @@ events:
         ignore line: [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
         ignore line: [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_4361e.dir\\CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_4361e.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_4361e.dir\\link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_ecd8a.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_ecd8a.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ecd8a.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe]
@@ -1781,13 +1833,13 @@ events:
         ignore line: [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
         ignore line: [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4361e.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_4361e.']
-        link line: [ C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\duc\\AppData\\Local\\Temp\\ccZuW5PR.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64 -m i386pep -Bdynamic -o cmTC_4361e.exe C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_4361e.dir/objects.a --no-whole-archive --out-implib libcmTC_4361e.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ecd8a.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_ecd8a.']
+        link line: [ C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\duc\\AppData\\Local\\Temp\\ccKKwjhP.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/buildroot/x86_64-1310-posix-seh-msvcrt-rt_v11-rev1/mingw64 -m i386pep -Bdynamic -o cmTC_ecd8a.exe C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_ecd8a.dir/objects.a --no-whole-archive --out-implib libcmTC_ecd8a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
           arg [C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/Qt/Tools/mingw1310_64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\duc\\AppData\\Local\\Temp\\ccZuW5PR.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\duc\\AppData\\Local\\Temp\\ccKKwjhP.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -1813,7 +1865,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_4361e.exe] ==> ignore
+          arg [cmTC_ecd8a.exe] ==> ignore
           arg [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o] ==> obj [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o]
           arg [-LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0] ==> dir [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0]
@@ -1824,10 +1876,10 @@ events:
           arg [-LC:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..] ==> dir [C:/Qt/Tools/mingw1310_64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_4361e.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\cmTC_ecd8a.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_4361e.dll.a] ==> ignore
+          arg [libcmTC_ecd8a.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -1918,8 +1970,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-zb9ceq"
-      binary: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-zb9ceq"
+      source: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-vf4xg2"
+      binary: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-vf4xg2"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1930,19 +1982,19 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-zb9ceq'
+        Change Dir: 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-vf4xg2'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe -f Makefile cmTC_44fd6/fast
-        C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_44fd6.dir\\build.make CMakeFiles/cmTC_44fd6.dir/build
-        mingw32-make.exe[1]: Entering directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-zb9ceq'
-        Building CXX object CMakeFiles/cmTC_44fd6.dir/src.cxx.obj
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles\\cmTC_44fd6.dir\\src.cxx.obj -c C:\\Users\\duc\\projects\\BTL\\AutonomousGUI\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zb9ceq\\src.cxx
-        Linking CXX executable cmTC_44fd6.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_44fd6.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_44fd6.dir/objects.a
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\ar.exe qc CMakeFiles\\cmTC_44fd6.dir/objects.a @CMakeFiles\\cmTC_44fd6.dir\\objects1.rsp
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_44fd6.dir/objects.a -Wl,--no-whole-archive -o cmTC_44fd6.exe -Wl,--out-implib,libcmTC_44fd6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_44fd6.dir\\linkLibs.rsp
-        mingw32-make.exe[1]: Leaving directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-zb9ceq'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe -f Makefile cmTC_83f24/fast
+        C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_83f24.dir\\build.make CMakeFiles/cmTC_83f24.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-vf4xg2'
+        Building CXX object CMakeFiles/cmTC_83f24.dir/src.cxx.obj
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -o CMakeFiles\\cmTC_83f24.dir\\src.cxx.obj -c C:\\Users\\duc\\projects\\BTL\\AutonomousGUI\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vf4xg2\\src.cxx
+        Linking CXX executable cmTC_83f24.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_83f24.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_83f24.dir/objects.a
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\ar.exe qc CMakeFiles\\cmTC_83f24.dir/objects.a @CMakeFiles\\cmTC_83f24.dir\\objects1.rsp
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_83f24.dir/objects.a -Wl,--no-whole-archive -o cmTC_83f24.exe -Wl,--out-implib,libcmTC_83f24.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_83f24.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-vf4xg2'
         
       exitCode: 0
   -
@@ -1961,8 +2013,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-67y5pn"
-      binary: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-67y5pn"
+      source: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-3l7qv8"
+      binary: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-3l7qv8"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1973,19 +2025,19 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-67y5pn'
+        Change Dir: 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-3l7qv8'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe -f Makefile cmTC_4da6c/fast
-        C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_4da6c.dir\\build.make CMakeFiles/cmTC_4da6c.dir/build
-        mingw32-make.exe[1]: Entering directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-67y5pn'
-        Building CXX object CMakeFiles/cmTC_4da6c.dir/src.cxx.obj
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DHAVE_STDATOMIC  -std=gnu++17 -o CMakeFiles\\cmTC_4da6c.dir\\src.cxx.obj -c C:\\Users\\duc\\projects\\BTL\\AutonomousGUI\\build\\CMakeFiles\\CMakeScratch\\TryCompile-67y5pn\\src.cxx
-        Linking CXX executable cmTC_4da6c.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_4da6c.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_4da6c.dir/objects.a
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\ar.exe qc CMakeFiles\\cmTC_4da6c.dir/objects.a @CMakeFiles\\cmTC_4da6c.dir\\objects1.rsp
-        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_4da6c.dir/objects.a -Wl,--no-whole-archive -o cmTC_4da6c.exe -Wl,--out-implib,libcmTC_4da6c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_4da6c.dir\\linkLibs.rsp
-        mingw32-make.exe[1]: Leaving directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-67y5pn'
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe -f Makefile cmTC_97dfb/fast
+        C:/Qt/Tools/mingw1310_64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_97dfb.dir\\build.make CMakeFiles/cmTC_97dfb.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-3l7qv8'
+        Building CXX object CMakeFiles/cmTC_97dfb.dir/src.cxx.obj
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DHAVE_STDATOMIC  -std=gnu++17 -o CMakeFiles\\cmTC_97dfb.dir\\src.cxx.obj -c C:\\Users\\duc\\projects\\BTL\\AutonomousGUI\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3l7qv8\\src.cxx
+        Linking CXX executable cmTC_97dfb.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_97dfb.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_97dfb.dir/objects.a
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\ar.exe qc CMakeFiles\\cmTC_97dfb.dir/objects.a @CMakeFiles\\cmTC_97dfb.dir\\objects1.rsp
+        C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -Wl,--whole-archive CMakeFiles\\cmTC_97dfb.dir/objects.a -Wl,--no-whole-archive -o cmTC_97dfb.exe -Wl,--out-implib,libcmTC_97dfb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_97dfb.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/CMakeScratch/TryCompile-3l7qv8'
         
       exitCode: 0
   -
@@ -2116,6 +2168,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2236,6 +2289,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2287,6 +2341,7 @@ events:
       - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/msys64/ucrt64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -2328,6 +2383,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2456,528 +2512,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/AutonomousGUI"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindVulkan.cmake:409 (find_path)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:13 (find_package)"
-    mode: "path"
-    variable: "Vulkan_INCLUDE_DIR"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "vulkan/vulkan.h"
-    candidate_directories:
-      - "C:/Qt/6.11.1/mingw_64/include/"
-      - "C:/Qt/6.11.1/mingw_64/"
-      - "C:/Qt/Tools/mingw1310_64/bin/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
-      - "C:/Program Files/MATLAB/R2024a/bin/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/msys64/mingw64/bin/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
-      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Qt/6.11.1/mingw_64/bin/"
-      - "C:/Program Files/include/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/include/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/include/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/AutonomousGUI/include/"
-      - "C:/Program Files (x86)/AutonomousGUI/"
-    searched_directories:
-      - "C:/Qt/6.11.1/mingw_64/include/vulkan/vulkan.h"
-      - "C:/Qt/6.11.1/mingw_64/vulkan/vulkan.h"
-      - "C:/Qt/Tools/mingw1310_64/bin/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/vulkan/vulkan.h"
-      - "C:/Windows/System32/vulkan/vulkan.h"
-      - "C:/Windows/vulkan/vulkan.h"
-      - "C:/Windows/System32/wbem/vulkan/vulkan.h"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/vulkan/vulkan.h"
-      - "C:/Windows/System32/OpenSSH/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/vulkan/vulkan.h"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/vulkan/vulkan.h"
-      - "C:/Program Files/MATLAB/R2024a/bin/vulkan/vulkan.h"
-      - "C:/Program Files/dotnet/vulkan/vulkan.h"
-      - "C:/Program Files/CMake/bin/vulkan/vulkan.h"
-      - "C:/msys64/mingw64/bin/vulkan/vulkan.h"
-      - "C:/Program Files/Git/cmd/vulkan/vulkan.h"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/vulkan/vulkan.h"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/vulkan/vulkan.h"
-      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/vulkan/vulkan.h"
-      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/vulkan/vulkan.h"
-      - "C:/msys64/ucrt64/bin/vulkan/vulkan.h"
-      - "C:/Qt/6.11.1/mingw_64/bin/vulkan/vulkan.h"
-      - "C:/Program Files/include/vulkan/vulkan.h"
-      - "C:/Program Files/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/include/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/vulkan/vulkan.h"
-      - "C:/Program Files/CMake/include/vulkan/vulkan.h"
-      - "C:/Program Files/CMake/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/AutonomousGUI/include/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/AutonomousGUI/vulkan/vulkan.h"
-    found: false
-    search_context:
-      CMAKE_PREFIX_PATH:
-        - "C:/Qt/6.11.1/mingw_64"
-      ENV{PATH}:
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\WINDOWS\\system32"
-        - "C:\\WINDOWS"
-        - "C:\\WINDOWS\\System32\\Wbem"
-        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
-        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\msys64\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/AutonomousGUI"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindVulkan.cmake:416 (find_library)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:13 (find_package)"
-    mode: "library"
-    variable: "Vulkan_LIBRARY"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "vulkan-1"
-    candidate_directories:
-      - "C:/Qt/6.11.1/mingw_64/lib/"
-      - "C:/Qt/6.11.1/mingw_64/"
-      - "C:/Qt/Tools/mingw1310_64/bin/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
-      - "C:/Program Files/MATLAB/R2024a/bin/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/msys64/mingw64/bin/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
-      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Qt/6.11.1/mingw_64/bin/"
-      - "C:/Program Files/lib/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/lib/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/lib/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/AutonomousGUI/lib/"
-      - "C:/Program Files (x86)/AutonomousGUI/"
-      - "C:/Program Files (x86)/AutonomousGUI/bin/"
-      - "/bin/"
-    searched_directories:
-      - "C:/Qt/6.11.1/mingw_64/lib/"
-      - "C:/Qt/6.11.1/mingw_64/"
-      - "C:/Qt/Tools/mingw1310_64/bin/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
-      - "C:/Program Files/MATLAB/R2024a/bin/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/msys64/mingw64/bin/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
-      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Qt/6.11.1/mingw_64/bin/"
-      - "C:/Program Files/lib/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/lib/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/lib/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/AutonomousGUI/lib/"
-      - "C:/Program Files (x86)/AutonomousGUI/"
-      - "C:/Program Files (x86)/AutonomousGUI/bin/"
-      - "/bin/"
-    found: false
-    search_context:
-      CMAKE_PREFIX_PATH:
-        - "C:/Qt/6.11.1/mingw_64"
-      ENV{PATH}:
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\WINDOWS\\system32"
-        - "C:\\WINDOWS"
-        - "C:\\WINDOWS\\System32\\Wbem"
-        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
-        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\msys64\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/AutonomousGUI"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "C:/Program Files (x86)/AutonomousGUI/bin"
-        - "C:/Program Files/CMake/bin"
-        - "/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindVulkan.cmake:424 (find_program)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:13 (find_package)"
-    mode: "program"
-    variable: "Vulkan_GLSLC_EXECUTABLE"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "glslc"
-    candidate_directories:
-      - "C:/Qt/6.11.1/mingw_64/bin/"
-      - "C:/Qt/6.11.1/mingw_64/sbin/"
-      - "C:/Qt/6.11.1/mingw_64/"
-      - "C:/Qt/Tools/mingw1310_64/bin/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
-      - "C:/Program Files/MATLAB/R2024a/bin/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/msys64/mingw64/bin/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
-      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Qt/6.11.1/mingw_64/bin/"
-      - "C:/Program Files/bin/"
-      - "C:/Program Files/sbin/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/bin/"
-      - "C:/Program Files (x86)/sbin/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/CMake/sbin/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/AutonomousGUI/bin/"
-      - "C:/Program Files (x86)/AutonomousGUI/sbin/"
-      - "C:/Program Files (x86)/AutonomousGUI/"
-    searched_directories:
-      - "C:/Qt/6.11.1/mingw_64/bin/glslc.com"
-      - "C:/Qt/6.11.1/mingw_64/bin/glslc.exe"
-      - "C:/Qt/6.11.1/mingw_64/bin/glslc"
-      - "C:/Qt/6.11.1/mingw_64/sbin/glslc.com"
-      - "C:/Qt/6.11.1/mingw_64/sbin/glslc.exe"
-      - "C:/Qt/6.11.1/mingw_64/sbin/glslc"
-      - "C:/Qt/6.11.1/mingw_64/glslc.com"
-      - "C:/Qt/6.11.1/mingw_64/glslc.exe"
-      - "C:/Qt/6.11.1/mingw_64/glslc"
-      - "C:/Qt/Tools/mingw1310_64/bin/glslc.com"
-      - "C:/Qt/Tools/mingw1310_64/bin/glslc.exe"
-      - "C:/Qt/Tools/mingw1310_64/bin/glslc"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslc.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslc.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslc"
-      - "C:/Windows/System32/glslc.com"
-      - "C:/Windows/System32/glslc.exe"
-      - "C:/Windows/System32/glslc"
-      - "C:/Windows/glslc.com"
-      - "C:/Windows/glslc.exe"
-      - "C:/Windows/glslc"
-      - "C:/Windows/System32/wbem/glslc.com"
-      - "C:/Windows/System32/wbem/glslc.exe"
-      - "C:/Windows/System32/wbem/glslc"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc"
-      - "C:/Windows/System32/OpenSSH/glslc.com"
-      - "C:/Windows/System32/OpenSSH/glslc.exe"
-      - "C:/Windows/System32/OpenSSH/glslc"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslc.com"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslc.exe"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslc"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslc.com"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslc.exe"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslc"
-      - "C:/Program Files/MATLAB/R2024a/bin/glslc.com"
-      - "C:/Program Files/MATLAB/R2024a/bin/glslc.exe"
-      - "C:/Program Files/MATLAB/R2024a/bin/glslc"
-      - "C:/Program Files/dotnet/glslc.com"
-      - "C:/Program Files/dotnet/glslc.exe"
-      - "C:/Program Files/dotnet/glslc"
-      - "C:/Program Files/CMake/bin/glslc.com"
-      - "C:/Program Files/CMake/bin/glslc.exe"
-      - "C:/Program Files/CMake/bin/glslc"
-      - "C:/msys64/mingw64/bin/glslc.com"
-    found: "C:/msys64/mingw64/bin/glslc.exe"
-    search_context:
-      CMAKE_PREFIX_PATH:
-        - "C:/Qt/6.11.1/mingw_64"
-      ENV{PATH}:
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\WINDOWS\\system32"
-        - "C:\\WINDOWS"
-        - "C:\\WINDOWS\\System32\\Wbem"
-        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
-        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\msys64\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/AutonomousGUI"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindVulkan.cmake:432 (find_program)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:13 (find_package)"
-    mode: "program"
-    variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "glslangValidator"
-    candidate_directories:
-      - "C:/Qt/6.11.1/mingw_64/bin/"
-      - "C:/Qt/6.11.1/mingw_64/sbin/"
-      - "C:/Qt/6.11.1/mingw_64/"
-      - "C:/Qt/Tools/mingw1310_64/bin/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
-      - "C:/Program Files/MATLAB/R2024a/bin/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/msys64/mingw64/bin/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
-      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
-      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "C:/msys64/ucrt64/bin/"
-      - "C:/Qt/6.11.1/mingw_64/bin/"
-      - "C:/Program Files/bin/"
-      - "C:/Program Files/sbin/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/bin/"
-      - "C:/Program Files (x86)/sbin/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/CMake/sbin/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/AutonomousGUI/bin/"
-      - "C:/Program Files (x86)/AutonomousGUI/sbin/"
-      - "C:/Program Files (x86)/AutonomousGUI/"
-    searched_directories:
-      - "C:/Qt/6.11.1/mingw_64/bin/glslangValidator.com"
-      - "C:/Qt/6.11.1/mingw_64/bin/glslangValidator.exe"
-      - "C:/Qt/6.11.1/mingw_64/bin/glslangValidator"
-      - "C:/Qt/6.11.1/mingw_64/sbin/glslangValidator.com"
-      - "C:/Qt/6.11.1/mingw_64/sbin/glslangValidator.exe"
-      - "C:/Qt/6.11.1/mingw_64/sbin/glslangValidator"
-      - "C:/Qt/6.11.1/mingw_64/glslangValidator.com"
-      - "C:/Qt/6.11.1/mingw_64/glslangValidator.exe"
-      - "C:/Qt/6.11.1/mingw_64/glslangValidator"
-      - "C:/Qt/Tools/mingw1310_64/bin/glslangValidator.com"
-      - "C:/Qt/Tools/mingw1310_64/bin/glslangValidator.exe"
-      - "C:/Qt/Tools/mingw1310_64/bin/glslangValidator"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator"
-      - "C:/Windows/System32/glslangValidator.com"
-      - "C:/Windows/System32/glslangValidator.exe"
-      - "C:/Windows/System32/glslangValidator"
-      - "C:/Windows/glslangValidator.com"
-      - "C:/Windows/glslangValidator.exe"
-      - "C:/Windows/glslangValidator"
-      - "C:/Windows/System32/wbem/glslangValidator.com"
-      - "C:/Windows/System32/wbem/glslangValidator.exe"
-      - "C:/Windows/System32/wbem/glslangValidator"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator"
-      - "C:/Windows/System32/OpenSSH/glslangValidator.com"
-      - "C:/Windows/System32/OpenSSH/glslangValidator.exe"
-      - "C:/Windows/System32/OpenSSH/glslangValidator"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslangValidator.com"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslangValidator.exe"
-      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslangValidator"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslangValidator.com"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslangValidator.exe"
-      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslangValidator"
-      - "C:/Program Files/MATLAB/R2024a/bin/glslangValidator.com"
-      - "C:/Program Files/MATLAB/R2024a/bin/glslangValidator.exe"
-      - "C:/Program Files/MATLAB/R2024a/bin/glslangValidator"
-      - "C:/Program Files/dotnet/glslangValidator.com"
-      - "C:/Program Files/dotnet/glslangValidator.exe"
-      - "C:/Program Files/dotnet/glslangValidator"
-      - "C:/Program Files/CMake/bin/glslangValidator.com"
-      - "C:/Program Files/CMake/bin/glslangValidator.exe"
-      - "C:/Program Files/CMake/bin/glslangValidator"
-      - "C:/msys64/mingw64/bin/glslangValidator.com"
-    found: "C:/msys64/mingw64/bin/glslangValidator.exe"
-    search_context:
-      CMAKE_PREFIX_PATH:
-        - "C:/Qt/6.11.1/mingw_64"
-      ENV{PATH}:
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\WINDOWS\\system32"
-        - "C:\\WINDOWS"
-        - "C:\\WINDOWS\\System32\\Wbem"
-        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
-        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\msys64\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2988,8 +2523,11 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:100 (find_package)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake:14 (_qt_internal_find_tool_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:36 (include)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:100 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_tool_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
       - "CMakeLists.txt:13 (find_package)"
     name: "Qt6GuiTools"
@@ -3019,7 +2557,7 @@ events:
       names:
         - "Qt6GuiTools"
       search_paths:
-        - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/.."
+        - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6WidgetsTools/.."
         - "C:/Qt/6.11.1/mingw_64/lib/cmake"
       path_suffixes:
         - ""
@@ -3112,134 +2650,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/AutonomousGUI"
-  -
-    kind: "find_package-v1"
-    backtrace:
-      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
-      - "CMakeLists.txt:13 (find_package)"
-    name: "Qt6Gui"
-    configs:
-      -
-        filename: "Qt6Gui.cps"
-        kind: "cps"
-      -
-        filename: "qt6gui.cps"
-        kind: "cps"
-      -
-        filename: "Qt6GuiConfig.cmake"
-        kind: "cmake"
-      -
-        filename: "qt6gui-config.cmake"
-        kind: "cmake"
-    version_request:
-      exact: false
-    settings:
-      required: "optional"
-      quiet: false
-      global: false
-      policy_scope: true
-      bypass_provider: false
-      names:
-        - "Qt6Gui"
-      search_paths:
-        - "C:/Qt/6.11.1/mingw_64/lib/cmake"
-      path_suffixes:
-        - ""
-      paths:
-        CMAKE_FIND_USE_CMAKE_PATH: false
-        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-        CMAKE_FIND_USE_INSTALL_PREFIX: true
-        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
-        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
-        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
-        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
-    candidates:
-      -
-        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Gui.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/lib/cps/qt6gui.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/share/cps/Qt6Gui.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/share/cps/qt6gui.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/qt6gui-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiTools/qt6gui-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiPrivate/Qt6GuiConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiPrivate/qt6gui-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-    found:
-      path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
-      mode: "config"
-      version: "6.11.1"
-    search_context:
-      CMAKE_PREFIX_PATH:
-        - "C:/Qt/6.11.1/mingw_64"
-      ENV{PATH}:
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\WINDOWS\\system32"
-        - "C:\\WINDOWS"
-        - "C:\\WINDOWS\\System32\\Wbem"
-        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
-        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
-        - "C:\\Program Files\\dotnet\\"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\msys64\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
-        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\msys64\\ucrt64\\bin"
-        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
-        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3374,6 +2785,696 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/AutonomousGUI"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindVulkan.cmake:409 (find_path)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "path"
+    variable: "Vulkan_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "vulkan/vulkan.h"
+    candidate_directories:
+      - "C:/Qt/6.11.1/mingw_64/include/"
+      - "C:/Qt/6.11.1/mingw_64/"
+      - "C:/Qt/Tools/mingw1310_64/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
+      - "C:/Program Files/MATLAB/R2024a/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/msys64/mingw64/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/msys64/ucrt64/bin/"
+      - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/include/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/AutonomousGUI/include/"
+      - "C:/Program Files (x86)/AutonomousGUI/"
+    searched_directories:
+      - "C:/Qt/6.11.1/mingw_64/include/vulkan/vulkan.h"
+      - "C:/Qt/6.11.1/mingw_64/vulkan/vulkan.h"
+      - "C:/Qt/Tools/mingw1310_64/bin/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/vulkan/vulkan.h"
+      - "C:/Windows/System32/vulkan/vulkan.h"
+      - "C:/Windows/vulkan/vulkan.h"
+      - "C:/Windows/System32/wbem/vulkan/vulkan.h"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/vulkan/vulkan.h"
+      - "C:/Windows/System32/OpenSSH/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/vulkan/vulkan.h"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/vulkan/vulkan.h"
+      - "C:/Program Files/MATLAB/R2024a/bin/vulkan/vulkan.h"
+      - "C:/Program Files/dotnet/vulkan/vulkan.h"
+      - "C:/Program Files/CMake/bin/vulkan/vulkan.h"
+      - "C:/msys64/mingw64/bin/vulkan/vulkan.h"
+      - "C:/Program Files/Git/cmd/vulkan/vulkan.h"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/vulkan/vulkan.h"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/vulkan/vulkan.h"
+      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/vulkan/vulkan.h"
+      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/vulkan/vulkan.h"
+      - "C:/msys64/ucrt64/bin/vulkan/vulkan.h"
+      - "C:/Qt/6.11.1/mingw_64/bin/vulkan/vulkan.h"
+      - "C:/Users/duc/.dotnet/tools/vulkan/vulkan.h"
+      - "C:/Program Files/include/vulkan/vulkan.h"
+      - "C:/Program Files/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/include/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/vulkan/vulkan.h"
+      - "C:/Program Files/CMake/include/vulkan/vulkan.h"
+      - "C:/Program Files/CMake/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/AutonomousGUI/include/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/AutonomousGUI/vulkan/vulkan.h"
+    found: false
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "C:/Qt/6.11.1/mingw_64"
+      ENV{PATH}:
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
+        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\msys64\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\msys64\\ucrt64\\bin"
+        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/AutonomousGUI"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindVulkan.cmake:416 (find_library)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "library"
+    variable: "Vulkan_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "vulkan-1"
+    candidate_directories:
+      - "C:/Qt/6.11.1/mingw_64/lib/"
+      - "C:/Qt/6.11.1/mingw_64/"
+      - "C:/Qt/Tools/mingw1310_64/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
+      - "C:/Program Files/MATLAB/R2024a/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/msys64/mingw64/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/msys64/ucrt64/bin/"
+      - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/lib/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/AutonomousGUI/lib/"
+      - "C:/Program Files (x86)/AutonomousGUI/"
+      - "C:/Program Files (x86)/AutonomousGUI/bin/"
+      - "/bin/"
+    searched_directories:
+      - "C:/Qt/6.11.1/mingw_64/lib/"
+      - "C:/Qt/6.11.1/mingw_64/"
+      - "C:/Qt/Tools/mingw1310_64/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
+      - "C:/Program Files/MATLAB/R2024a/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/msys64/mingw64/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/msys64/ucrt64/bin/"
+      - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/lib/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/AutonomousGUI/lib/"
+      - "C:/Program Files (x86)/AutonomousGUI/"
+      - "C:/Program Files (x86)/AutonomousGUI/bin/"
+      - "/bin/"
+    found: false
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "C:/Qt/6.11.1/mingw_64"
+      ENV{PATH}:
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
+        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\msys64\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\msys64\\ucrt64\\bin"
+        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/AutonomousGUI"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files (x86)/AutonomousGUI/bin"
+        - "C:/Program Files/CMake/bin"
+        - "/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindVulkan.cmake:424 (find_program)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "program"
+    variable: "Vulkan_GLSLC_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glslc"
+    candidate_directories:
+      - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Qt/6.11.1/mingw_64/sbin/"
+      - "C:/Qt/6.11.1/mingw_64/"
+      - "C:/Qt/Tools/mingw1310_64/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
+      - "C:/Program Files/MATLAB/R2024a/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/msys64/mingw64/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/msys64/ucrt64/bin/"
+      - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/AutonomousGUI/bin/"
+      - "C:/Program Files (x86)/AutonomousGUI/sbin/"
+      - "C:/Program Files (x86)/AutonomousGUI/"
+    searched_directories:
+      - "C:/Qt/6.11.1/mingw_64/bin/glslc.com"
+      - "C:/Qt/6.11.1/mingw_64/bin/glslc.exe"
+      - "C:/Qt/6.11.1/mingw_64/bin/glslc"
+      - "C:/Qt/6.11.1/mingw_64/sbin/glslc.com"
+      - "C:/Qt/6.11.1/mingw_64/sbin/glslc.exe"
+      - "C:/Qt/6.11.1/mingw_64/sbin/glslc"
+      - "C:/Qt/6.11.1/mingw_64/glslc.com"
+      - "C:/Qt/6.11.1/mingw_64/glslc.exe"
+      - "C:/Qt/6.11.1/mingw_64/glslc"
+      - "C:/Qt/Tools/mingw1310_64/bin/glslc.com"
+      - "C:/Qt/Tools/mingw1310_64/bin/glslc.exe"
+      - "C:/Qt/Tools/mingw1310_64/bin/glslc"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslc.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslc.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslc"
+      - "C:/Windows/System32/glslc.com"
+      - "C:/Windows/System32/glslc.exe"
+      - "C:/Windows/System32/glslc"
+      - "C:/Windows/glslc.com"
+      - "C:/Windows/glslc.exe"
+      - "C:/Windows/glslc"
+      - "C:/Windows/System32/wbem/glslc.com"
+      - "C:/Windows/System32/wbem/glslc.exe"
+      - "C:/Windows/System32/wbem/glslc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslc"
+      - "C:/Windows/System32/OpenSSH/glslc.com"
+      - "C:/Windows/System32/OpenSSH/glslc.exe"
+      - "C:/Windows/System32/OpenSSH/glslc"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslc.com"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslc.exe"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslc"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslc.com"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslc.exe"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslc"
+      - "C:/Program Files/MATLAB/R2024a/bin/glslc.com"
+      - "C:/Program Files/MATLAB/R2024a/bin/glslc.exe"
+      - "C:/Program Files/MATLAB/R2024a/bin/glslc"
+      - "C:/Program Files/dotnet/glslc.com"
+      - "C:/Program Files/dotnet/glslc.exe"
+      - "C:/Program Files/dotnet/glslc"
+      - "C:/Program Files/CMake/bin/glslc.com"
+      - "C:/Program Files/CMake/bin/glslc.exe"
+      - "C:/Program Files/CMake/bin/glslc"
+      - "C:/msys64/mingw64/bin/glslc.com"
+    found: "C:/msys64/mingw64/bin/glslc.exe"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "C:/Qt/6.11.1/mingw_64"
+      ENV{PATH}:
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
+        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\msys64\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\msys64\\ucrt64\\bin"
+        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/AutonomousGUI"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindVulkan.cmake:432 (find_program)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "program"
+    variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glslangValidator"
+    candidate_directories:
+      - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Qt/6.11.1/mingw_64/sbin/"
+      - "C:/Qt/6.11.1/mingw_64/"
+      - "C:/Qt/Tools/mingw1310_64/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/"
+      - "C:/Program Files/MATLAB/R2024a/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/msys64/mingw64/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/duc/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/duc/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/duc/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/msys64/ucrt64/bin/"
+      - "C:/Qt/6.11.1/mingw_64/bin/"
+      - "C:/Users/duc/.dotnet/tools/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/AutonomousGUI/bin/"
+      - "C:/Program Files (x86)/AutonomousGUI/sbin/"
+      - "C:/Program Files (x86)/AutonomousGUI/"
+    searched_directories:
+      - "C:/Qt/6.11.1/mingw_64/bin/glslangValidator.com"
+      - "C:/Qt/6.11.1/mingw_64/bin/glslangValidator.exe"
+      - "C:/Qt/6.11.1/mingw_64/bin/glslangValidator"
+      - "C:/Qt/6.11.1/mingw_64/sbin/glslangValidator.com"
+      - "C:/Qt/6.11.1/mingw_64/sbin/glslangValidator.exe"
+      - "C:/Qt/6.11.1/mingw_64/sbin/glslangValidator"
+      - "C:/Qt/6.11.1/mingw_64/glslangValidator.com"
+      - "C:/Qt/6.11.1/mingw_64/glslangValidator.exe"
+      - "C:/Qt/6.11.1/mingw_64/glslangValidator"
+      - "C:/Qt/Tools/mingw1310_64/bin/glslangValidator.com"
+      - "C:/Qt/Tools/mingw1310_64/bin/glslangValidator.exe"
+      - "C:/Qt/Tools/mingw1310_64/bin/glslangValidator"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator"
+      - "C:/Windows/System32/glslangValidator.com"
+      - "C:/Windows/System32/glslangValidator.exe"
+      - "C:/Windows/System32/glslangValidator"
+      - "C:/Windows/glslangValidator.com"
+      - "C:/Windows/glslangValidator.exe"
+      - "C:/Windows/glslangValidator"
+      - "C:/Windows/System32/wbem/glslangValidator.com"
+      - "C:/Windows/System32/wbem/glslangValidator.exe"
+      - "C:/Windows/System32/wbem/glslangValidator"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator"
+      - "C:/Windows/System32/OpenSSH/glslangValidator.com"
+      - "C:/Windows/System32/OpenSSH/glslangValidator.exe"
+      - "C:/Windows/System32/OpenSSH/glslangValidator"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslangValidator.com"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslangValidator.exe"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/glslangValidator"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslangValidator.com"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslangValidator.exe"
+      - "C:/Program Files/MATLAB/R2024a/runtime/win64/glslangValidator"
+      - "C:/Program Files/MATLAB/R2024a/bin/glslangValidator.com"
+      - "C:/Program Files/MATLAB/R2024a/bin/glslangValidator.exe"
+      - "C:/Program Files/MATLAB/R2024a/bin/glslangValidator"
+      - "C:/Program Files/dotnet/glslangValidator.com"
+      - "C:/Program Files/dotnet/glslangValidator.exe"
+      - "C:/Program Files/dotnet/glslangValidator"
+      - "C:/Program Files/CMake/bin/glslangValidator.com"
+      - "C:/Program Files/CMake/bin/glslangValidator.exe"
+      - "C:/Program Files/CMake/bin/glslangValidator"
+      - "C:/msys64/mingw64/bin/glslangValidator.com"
+    found: "C:/msys64/mingw64/bin/glslangValidator.exe"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "C:/Qt/6.11.1/mingw_64"
+      ENV{PATH}:
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
+        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\msys64\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\msys64\\ucrt64\\bin"
+        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/AutonomousGUI"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:253 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    name: "Qt6Gui"
+    configs:
+      -
+        filename: "Qt6Gui.cps"
+        kind: "cps"
+      -
+        filename: "qt6gui.cps"
+        kind: "cps"
+      -
+        filename: "Qt6GuiConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6gui-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.11.1"
+      version_complete: "6.11.1"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6Gui"
+      search_paths:
+        - "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/.."
+        - "C:/Qt/6.11.1/mingw_64/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Gui.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/lib/cps/qt6gui.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/share/cps/Qt6Gui.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/duc/projects/BTL/AutonomousGUI/build/CMakeFiles/pkgRedirects/share/cps/qt6gui.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/qt6gui-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiTools/qt6gui-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiPrivate/Qt6GuiConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6GuiPrivate/qt6gui-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
+      mode: "config"
+      version: "6.11.1"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "C:/Qt/6.11.1/mingw_64"
+      ENV{PATH}:
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\MATLAB\\R2024a\\runtime\\win64"
+        - "C:\\Program Files\\MATLAB\\R2024a\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\msys64\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\duc\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\duc\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\msys64\\ucrt64\\bin"
+        - "C:\\Qt\\6.11.1\\mingw_64\\bin"
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3502,6 +3603,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3622,6 +3724,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3742,6 +3845,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3756,10 +3860,6 @@ events:
     components:
       -
         name: "Core"
-        required: true
-        found: false
-      -
-        name: "Gui"
         required: true
         found: false
       -
@@ -5600,6 +5700,7 @@ events:
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Qt\\6.11.1\\mingw_64\\bin"
         - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Users\\duc\\.dotnet\\tools"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/AutonomousGUI"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"

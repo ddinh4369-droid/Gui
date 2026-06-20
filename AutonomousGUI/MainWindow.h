@@ -9,12 +9,9 @@
 #include <QLabel>
 #include <QSlider>
 #include <QProcess>
-#include <QTimer>
 #include <QList>
-#include <QtSerialPort/QSerialPortInfo>
-
-// Nhúng Win32 API thuần để giao tiếp Serial cứng
-#include <windows.h>
+#include <QSerialPort>
+#include <QSerialPortInfo>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -24,42 +21,47 @@ public:
     ~MainWindow();
 
 protected:
-    // ⭐ Bắt buộc phải có để xử lý sự kiện click vào ComboBox tự động làm mới cổng COM
+    // Xử lý sự kiện click vào ComboBox để tự động làm mới danh sách cổng COM
     bool eventFilter(QObject *obj, QEvent *event) override;
     
-    // Xử lý sự kiện nhấn thả phím từ bàn phím (W, A, S, D)
+    // Xử lý sự kiện nhấn/thả phím điều hướng (W, A, S, D) từ bàn phím
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
 
 private slots:
-    // Các Slot xử lý cấu hình kết nối
+    // Các Slot xử lý cấu hình kết nối cổng nối tiếp
     void onConnectClicked();
     void onDisconnectClicked();
     void refreshComPorts();
 
-    // Các Slot xử lý luồng nhận dữ liệu
+    // Các Slot xử lý luồng nhận dữ liệu đầu vào
     void readPythonOutput();
     void readSerialData();
 
-    // Các Slot điều khiển tốc độ và động cơ
+    // Các Slot điều khiển tốc độ và trạng thái động cơ
     void onMasterSliderChanged();
     void onMotorSliderChanged();
     void onStopCarClicked();
     void onResetPressed();
 
 private:
-    // Hàm bổ trợ nội bộ để phân tích cử chỉ tay và điều hướng xe
+    // --- CÁC HÀM TRỢ GIÚP TỐI ƯU HÓA (ĐÓNG GÓI & TÁI SỬ DỤNG MÃ NGUỒN) ---
+    void sendCommand(int mode, int fl, int fr, int rl, int rr, const QString &dir, bool reset = false);
+    void updateMotorSliders(int value);
+
+    // Phân tích cử chỉ ngón tay từ AI để điều phối hệ thống
     void handleGesture(int fingers);
     void updateUI(int battery, double dist, int lineState);
     void updateCameraFrame(const QImage &frame);
     void processManualMovement(QString direction);
 
     // --- BIẾN ĐIỀU KHIỂN HỆ THỐNG VÀ PHẦN CỨNG ---
-    HANDLE hSerial;             // Handle quản lý cổng COM theo cấu trúc Win32 API
+    QSerialPort *serialPort;    // Đối tượng quản lý kết nối nối tiếp (thay thế cho Win32 HANDLE)
+    QString serialBuffer;       // Bộ đệm xử lý dòng dữ liệu nhận từ mạch Serial
     int currentMode;            // Chế độ hoạt động hiện tại (0: Stop, 1: Line, 2: Tránh vật cản, 3: Manual, 5: AI)
     QProcess *pythonProcess;    // Tiến trình chạy ngầm script Mediapipe (hand_tracker.py)
-    QTimer *serialTimer;        // Timer quét chu kỳ đọc dữ liệu từ mạch
-
+    QTimer *serialTimer;
+    
     // --- CÁC THÀNH PHẦN GIAO DIỆN (UI COMPONENTS) ---
     // Khối Telemetry
     QLCDNumber *speedDisplay;

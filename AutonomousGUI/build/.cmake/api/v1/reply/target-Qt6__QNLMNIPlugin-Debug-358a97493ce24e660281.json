@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Qt/6.11.1/mingw_64/plugins/platforms/qdirect2d.dll"
+			"path" : "C:/Qt/6.11.1/mingw_64/plugins/networkinformation/qnetworklistmanager.dll"
 		}
 	],
 	"backtrace" : 12,
@@ -18,11 +18,11 @@
 		],
 		"files" : 
 		[
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake",
 			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
 			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
 			"CMakeLists.txt"
 		],
@@ -100,11 +100,11 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "Qt6::QWindowsDirect2DIntegrationPlugin::@6890427a1f51a3e7e1df",
+	"id" : "Qt6::QNLMNIPlugin::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"local" : true,
-	"name" : "Qt6::QWindowsDirect2DIntegrationPlugin",
-	"nameOnDisk" : "qdirect2d.dll",
+	"name" : "Qt6::QNLMNIPlugin",
+	"nameOnDisk" : "qnetworklistmanager.dll",
 	"paths" : 
 	{
 		"build" : ".",

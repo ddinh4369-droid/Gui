@@ -417,12 +417,6 @@ CMakeFiles/AutonomousGUI.dir/MainWindow.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QSlider \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QProcess \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qprocess.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QTimer \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qtimer.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qbasictimer.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qeventloop.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qdeadlinetimer.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QList \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/QSerialPort \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/qserialport.h \
@@ -433,14 +427,6 @@ CMakeFiles/AutonomousGUI.dir/MainWindow.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/qtserialportexports.h \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/QSerialPortInfo \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/qserialportinfo.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/QTcpSocket \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qtcpsocket.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qtnetworkglobal.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qtnetwork-config.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qtnetworkexports.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qabstractsocket.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qhostaddress.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QByteArray \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/qboxlayout.h \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/qlayout.h \
@@ -460,6 +446,10 @@ CMakeFiles/AutonomousGUI.dir/MainWindow.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtGui/QKeyEvent \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qevent.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qdeadlinetimer.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qeventpoint.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qvector2d.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qvectornd.h \
@@ -479,9 +469,9 @@ CMakeFiles/AutonomousGUI.dir/MainWindow.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qinputmethod.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qguiapplication_platform.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QCoreApplication \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QFile \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qfile.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QDir \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qdir.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qdirlisting.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qfiledevice.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/filesystem \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_fwd.h \
@@ -513,5 +503,13 @@ CMakeFiles/AutonomousGUI.dir/MainWindow.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/codecvt \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_dir.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QDataStream \
- C:/Qt/6.11.1/mingw_64/include/QtGui/QPixmap
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qfile.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qfileinfo.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qtimezone.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QCoreApplication \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QRegularExpression \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QFile \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QTimer \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qtimer.h

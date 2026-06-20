@@ -418,12 +418,6 @@ CMakeFiles/AutonomousGUI.dir/AutonomousGUI_autogen/mocs_compilation.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QSlider \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QProcess \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qprocess.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QTimer \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qtimer.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qbasictimer.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qeventloop.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qdeadlinetimer.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QList \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/QSerialPort \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/qserialport.h \
@@ -434,14 +428,6 @@ CMakeFiles/AutonomousGUI.dir/AutonomousGUI_autogen/mocs_compilation.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/qtserialportexports.h \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/QSerialPortInfo \
  C:/Qt/6.11.1/mingw_64/include/QtSerialPort/qserialportinfo.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/QTcpSocket \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qtcpsocket.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qtnetworkglobal.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qtnetwork-config.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qtnetworkexports.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qabstractsocket.h \
- C:/Qt/6.11.1/mingw_64/include/QtNetwork/qhostaddress.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QByteArray \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qtextcursor.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qpen.h \

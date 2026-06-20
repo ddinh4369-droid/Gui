@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Qt/6.11.1/mingw_64/plugins/imageformats/qico.dll"
+			"path" : "C:/Qt/6.11.1/mingw_64/plugins/tls/qopensslbackend.dll"
 		}
 	],
 	"backtrace" : 12,
@@ -18,11 +18,11 @@
 		],
 		"files" : 
 		[
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake",
 			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake",
-			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
 			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
 			"CMakeLists.txt"
 		],
@@ -100,11 +100,11 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "Qt6::QICOPlugin::@6890427a1f51a3e7e1df",
+	"id" : "Qt6::QTlsBackendOpenSSLPlugin::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"local" : true,
-	"name" : "Qt6::QICOPlugin",
-	"nameOnDisk" : "qico.dll",
+	"name" : "Qt6::QTlsBackendOpenSSLPlugin",
+	"nameOnDisk" : "qopensslbackend.dll",
 	"paths" : 
 	{
 		"build" : ".",

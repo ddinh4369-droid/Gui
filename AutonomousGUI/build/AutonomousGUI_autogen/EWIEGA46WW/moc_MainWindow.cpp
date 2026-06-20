@@ -44,10 +44,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "",
         "onDisconnectClicked",
         "refreshComPorts",
-        "readSerialData",
-        "readSocketData",
-        "readVideoData",
         "readPythonOutput",
+        "readSerialData",
         "onMasterSliderChanged",
         "onMotorSliderChanged",
         "onStopCarClicked",
@@ -61,22 +59,18 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'refreshComPorts'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'readSerialData'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'readSocketData'
-        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'readVideoData'
-        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'readPythonOutput'
-        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'readSerialData'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onMasterSliderChanged'
-        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onMotorSliderChanged'
-        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onStopCarClicked'
-        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onResetPressed'
-        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -103,14 +97,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->onConnectClicked(); break;
         case 1: _t->onDisconnectClicked(); break;
         case 2: _t->refreshComPorts(); break;
-        case 3: _t->readSerialData(); break;
-        case 4: _t->readSocketData(); break;
-        case 5: _t->readVideoData(); break;
-        case 6: _t->readPythonOutput(); break;
-        case 7: _t->onMasterSliderChanged(); break;
-        case 8: _t->onMotorSliderChanged(); break;
-        case 9: _t->onStopCarClicked(); break;
-        case 10: _t->onResetPressed(); break;
+        case 3: _t->readPythonOutput(); break;
+        case 4: _t->readSerialData(); break;
+        case 5: _t->onMasterSliderChanged(); break;
+        case 6: _t->onMotorSliderChanged(); break;
+        case 7: _t->onStopCarClicked(); break;
+        case 8: _t->onResetPressed(); break;
         default: ;
         }
     }
@@ -136,14 +128,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        _id -= 9;
     }
     return _id;
 }
